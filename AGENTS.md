@@ -149,6 +149,12 @@ eCamp3 uses Supabase **only as PostgreSQL** — not Supabase Auth, Realtime, or 
 3. Start **without** the local `database` container:
 
 ```bash
+./scripts/start-with-supabase.sh
+```
+
+Or manually:
+
+```bash
 DB_CPU_LIMIT=4 docker compose \
   -f docker-compose.yml \
   -f docker-compose.override.yml \
@@ -156,6 +162,8 @@ DB_CPU_LIMIT=4 docker compose \
   -f .cursor/docker-compose.cloud.override.yml \
   up -d --wait
 ```
+
+The `SUPABASE_DATABASE_URL` secret (or a root `.env` file) is read automatically by Compose. On Cloud Agent VMs, the update script writes `.env` from the secret on pod startup.
 
 4. Run migrations and ensure JWT keys exist (see below).
 
