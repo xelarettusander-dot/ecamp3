@@ -138,7 +138,30 @@ Find the skill here: [skills](.agents/skills).
 
 ## Cursor Cloud specific instructions
 
-This project does **not** use Supabase or external NAS services for local development. The dev stack is self-contained via Docker Compose (Postgres, nginx reverse-proxy, mock OAuth, maildev, etc.). Your NAS Docker/Supabase/nginx setup is unrelated unless you intentionally re-point services (not supported out of the box).
+The default dev stack is self-contained via Docker Compose (local Postgres, nginx reverse-proxy, mock OAuth, maildev). You can optionally point the API at **external Postgres**, e.g. self-hosted Supabase on your NAS.
+
+### Using Supabase Postgres (`supabase.jungschar-gelterkinden.ch`)
+
+eCamp3 uses Supabase **only as PostgreSQL** — not Supabase Auth, Realtime, or Storage. Login remains eCamp JWT + OAuth providers.
+
+1. In Supabase Studio, create a database (e.g. `ecamp3`) and copy the Postgres connection string.
+2. Copy `.env.supabase.example` → `.env` and set `SUPABASE_DATABASE_URL`.
+3. Start **without** the local `database` container:
+
+```bash
+DB_CPU_LIMIT=4 docker compose \
+  -f docker-compose.yml \
+  -f docker-compose.override.yml \
+  -f docker-compose.supabase.yml \
+  -f .cursor/docker-compose.cloud.override.yml \
+  up -d --wait
+```
+
+4. Run migrations and ensure JWT keys exist (see below).
+
+Use port **5432** (direct) for migrations. Pooler port **6543** is optional for runtime. Add `&sslmode=require` to the URL if your instance enforces TLS.
+
+To use local Postgres again, add `--profile local-db` and omit `docker-compose.supabase.yml`.
 
 ### Docker in Cloud VMs
 
