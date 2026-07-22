@@ -1,0 +1,30 @@
+# Use Supabase (or any external Postgres) instead of the local `database` container.
+#
+# 1. Copy `.env.supabase.example` to `.env` and set SUPABASE_DATABASE_URL.
+# 2. Start without the local Postgres service:
+#
+#    DB_CPU_LIMIT=4 docker compose \
+#      -f docker-compose.yml \
+#      -f docker-compose.override.yml \
+#      -f docker-compose.supabase.yml \
+#      -f .cursor/docker-compose.cloud.override.yml \
+#      up -d --wait
+#
+# 3. Run migrations once (JWT keys must exist — see AGENTS.md):
+#    docker compose exec api php bin/console doctrine:migrations:migrate --no-interaction
+
+services:
+  api:
+    depends_on: !reset
+      - docker-host
+      - mock-oauth2
+    environment:
+      DATABASE_URL: ${SUPABASE_DATABASE_URL:?Set SUPABASE_DATABASE_URL in .env}
+
+  database:
+    profiles:
+      - local-db
+
+  pg-admin:
+    profiles:
+      - local-db
