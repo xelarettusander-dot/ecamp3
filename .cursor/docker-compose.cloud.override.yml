@@ -1,0 +1,4 @@
+# Cloud VM override: nested Docker cannot apply compose deploy CPU/memory limits (cgroup v2 threaded mode).
+services:
+  database:
+    deploy: !reset {}
