@@ -8,7 +8,8 @@
           :landscape="content.options.orientation === 'L'"
           :multiple="
             contentComponents[content.type].design.multiple ||
-            content.options?.periods?.length > 1
+            content.options?.periods?.length > 1 ||
+            content.options?.pageCount > 1
           "
           @remove="removeContent(idx)"
         >
@@ -127,6 +128,7 @@ import SummaryConfig from './config/SummaryConfig.vue'
 import ProgramConfig from './config/ProgramConfig.vue'
 import ActivityConfig from './config/ActivityConfig.vue'
 import ActivityListConfig from './config/ActivityListConfig.vue'
+import NotesPagesConfig from './config/NotesPagesConfig.vue'
 import TocConfig from './config/TocConfig.vue'
 import PagesOverview from './configurator/PagesOverview.vue'
 import PagesConfig from './configurator/PagesConfig.vue'
@@ -157,6 +159,7 @@ export default {
     ActivityConfig,
     TocConfig,
     ActivityListConfig,
+    NotesPagesConfig,
   },
   provide() {
     return {
@@ -197,6 +200,7 @@ export default {
         Activity: ActivityConfig,
         Toc: TocConfig,
         ActivityList: ActivityListConfig,
+        NotesPages: NotesPagesConfig,
       }
     },
     lang() {

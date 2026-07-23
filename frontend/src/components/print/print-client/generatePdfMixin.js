@@ -50,6 +50,8 @@ export const generatePdfMixin = {
               return Math.ceil(0.1 * activityCount)
             case 'Program':
               return Math.ceil(0.5 * activityCount)
+            case 'NotesPages':
+              return content.options.pageCount || 1
             default:
               return 1
           }

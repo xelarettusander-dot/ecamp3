@@ -330,6 +330,14 @@
         },
         "programConfig": {
           "dayOverview": "Panoramica della giornata di stampa"
+        },
+        "notesPagesConfig": {
+          "pageCount": "Numero di pagine",
+          "style": "Stile pagina",
+          "styles": {
+            "lined": "A righe",
+            "blank": "Vuoto"
+          }
         }
       },
       "documents": {
@@ -367,7 +375,8 @@
           "Program": "Programma",
           "SafetyConsiderations": "Considerazioni sulla sicurezza",
           "Story": "Riassunto della storia",
-          "Toc": "Indice dei contenuti"
+          "Toc": "Indice dei contenuti",
+          "NotesPages": "Pagine per appunti"
         }
       },
       "printNuxt": {

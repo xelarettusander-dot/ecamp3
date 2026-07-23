@@ -411,6 +411,14 @@
         },
         "programConfig": {
           "dayOverview": "Tagesübersicht"
+        },
+        "notesPagesConfig": {
+          "pageCount": "Anzahl Seiten",
+          "style": "Seitenstil",
+          "styles": {
+            "lined": "Liniert",
+            "blank": "Leer"
+          }
         }
       },
       "documents": {
@@ -460,7 +468,8 @@
           "Program": "Detailprogramm",
           "SafetyConsiderations": "Sicherheits­überlegungen",
           "Story": "Geschichte",
-          "Toc": "Inhaltsverzeichnis"
+          "Toc": "Inhaltsverzeichnis",
+          "NotesPages": "Notizseiten"
         },
         "options": "Einstellungen",
         "pageNumbers": "Seitenzahlen",

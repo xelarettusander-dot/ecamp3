@@ -411,6 +411,14 @@
         },
         "programConfig": {
           "dayOverview": "print day overview"
+        },
+        "notesPagesConfig": {
+          "pageCount": "Number of pages",
+          "style": "Page style",
+          "styles": {
+            "lined": "Lined",
+            "blank": "Blank"
+          }
         }
       },
       "documents": {
@@ -460,7 +468,8 @@
           "Program": "Program",
           "SafetyConsiderations": "Safety considerations",
           "Story": "Story",
-          "Toc": "Table of contents"
+          "Toc": "Table of contents",
+          "NotesPages": "Notes pages"
         },
         "options": "Einstellungen",
         "pageNumbers": "Seitenzahlen",

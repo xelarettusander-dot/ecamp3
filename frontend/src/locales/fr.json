@@ -408,6 +408,14 @@
         },
         "programConfig": {
           "dayOverview": "Aperçu des jours"
+        },
+        "notesPagesConfig": {
+          "pageCount": "Nombre de pages",
+          "style": "Style de page",
+          "styles": {
+            "lined": "Ligné",
+            "blank": "Blanc"
+          }
         }
       },
       "documents": {
@@ -457,7 +465,8 @@
           "Program": "Programme",
           "SafetyConsiderations": "Considérations sur la sécurité",
           "Story": "Histoire",
-          "Toc": "Table des matières"
+          "Toc": "Table des matières",
+          "NotesPages": "Pages de notes"
         },
         "options": "Paramètres",
         "pageNumbers": "Numéros de page"
