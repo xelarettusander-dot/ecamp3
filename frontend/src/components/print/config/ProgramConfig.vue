@@ -16,6 +16,12 @@
       :label="$t('components.print.config.programConfig.dayOverview')"
       @update:model-value="$emit('update:modelValue', modelValue)"
     />
+    <e-checkbox
+      v-model="options.pageBreakBetweenScheduleEntries"
+      path="pageBreakBetweenScheduleEntries"
+      :label="$t('components.print.config.programConfig.pageBreakBetweenScheduleEntries')"
+      @update:model-value="$emit('update:modelValue', modelValue)"
+    />
     <div class="flex-grow-1"></div>
     <DialogScheduleEntryFilter
       :camp="camp"
@@ -82,6 +88,7 @@ export default {
       periods:
         camp.periods().items.length === 1 ? [camp.periods().items[0]._meta.self] : [],
       dayOverview: true,
+      pageBreakBetweenScheduleEntries: false,
       filter: repairFilterConfig(null, camp),
     }
   },
@@ -100,6 +107,9 @@ export default {
       })
     }
     if (typeof config.options.dayOverview !== 'boolean') config.options.dayOverview = true
+    if (typeof config.options.pageBreakBetweenScheduleEntries !== 'boolean') {
+      config.options.pageBreakBetweenScheduleEntries = false
+    }
     config.options.filter = repairFilterConfig(config.options.filter, camp)
     return config
   },

@@ -1,5 +1,5 @@
 <template>
-  <template v-if="showDailySummary">
+  <template v-if="showDailySummary || pageBreakBetweenScheduleEntries">
     <ProgramPeriod
       v-for="(period, periodIndex) in periods"
       :id="id"
@@ -7,7 +7,8 @@
       :filter="content.options.filter"
       :config="config"
       :is-first-period="periodIndex === 0"
-      show-daily-summary
+      :show-daily-summary="showDailySummary"
+      :page-break-between-schedule-entries="pageBreakBetweenScheduleEntries"
     >
       <slot />
     </ProgramPeriod>
@@ -39,6 +40,9 @@ export default {
   computed: {
     showDailySummary() {
       return this.content.options.dayOverview || false
+    },
+    pageBreakBetweenScheduleEntries() {
+      return this.content.options.pageBreakBetweenScheduleEntries || false
     },
     periods() {
       return this.content.options.periods

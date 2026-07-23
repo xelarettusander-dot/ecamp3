@@ -1,5 +1,10 @@
 <template>
-  <div :class="showDailySummary && 'program-day-section'">
+  <div
+    :class="{
+      'program-day-section': showDailySummary,
+      'program-day-with-entry-breaks': pageBreakBetweenScheduleEntries,
+    }"
+  >
     <day-summary
       v-if="showDailySummary"
       :day="day"
@@ -7,12 +12,13 @@
     />
 
     <div v-if="showActivities">
-      <schedule-entry
+      <div
         v-for="scheduleEntry in scheduleEntries"
         :key="scheduleEntry.id"
-        :schedule-entry="scheduleEntry"
-        :index="index"
-      />
+        :class="{ 'schedule-entry-page': pageBreakBetweenScheduleEntries }"
+      >
+        <schedule-entry :schedule-entry="scheduleEntry" :index="index" />
+      </div>
     </div>
   </div>
 </template>
@@ -26,6 +32,7 @@ export default {
     day: { type: Object, required: true },
     filter: { type: Object, default: () => ({}) },
     showDailySummary: { type: Boolean, required: true },
+    pageBreakBetweenScheduleEntries: { type: Boolean, default: false },
     showActivities: { type: Boolean, required: true },
     index: { type: Number, required: true },
     scheduleEntries: { type: Array, required: true },
@@ -36,6 +43,14 @@ export default {
 
 <style scoped>
 .program-day-section + .program-day-section {
+  break-before: page;
+}
+
+.program-day-with-entry-breaks + .program-day-with-entry-breaks {
+  break-before: page;
+}
+
+.schedule-entry-page + .schedule-entry-page {
   break-before: page;
 }
 </style>

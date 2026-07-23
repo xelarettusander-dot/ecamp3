@@ -410,7 +410,8 @@
           "portrait": "Hochformat"
         },
         "programConfig": {
-          "dayOverview": "Tagesübersicht"
+          "dayOverview": "Tagesübersicht",
+          "pageBreakBetweenScheduleEntries": "Jeder Programmpunkt auf neuer Seite"
         }
       },
       "documents": {

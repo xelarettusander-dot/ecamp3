@@ -17,6 +17,7 @@
       :day="day"
       :filter="filter"
       :show-daily-summary="showDailySummary"
+      :page-break-between-schedule-entries="pageBreakBetweenScheduleEntries"
       :show-activities="showActivities"
       :index="index"
       :schedule-entries="scheduleEntries"
@@ -43,6 +44,7 @@ const props = defineProps({
   showActivities: { type: Boolean, required: true },
   index: { type: Number, required: true },
   pageSize: { type: String, default: 'a4' },
+  pageBreakBetweenScheduleEntries: { type: Boolean, default: false },
 })
 
 const { data: days, error } = await useAsyncData(

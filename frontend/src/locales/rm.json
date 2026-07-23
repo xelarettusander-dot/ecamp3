@@ -266,7 +266,8 @@
           "orientation": "Layout da la pagina"
         },
         "programConfig": {
-          "dayOverview": "Survista dal di"
+          "dayOverview": "Survista dal di",
+          "pageBreakBetweenScheduleEntries": "Mintga punct dal program sin ina nova pagina"
         }
       },
       "documents": {

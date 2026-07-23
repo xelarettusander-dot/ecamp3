@@ -1,5 +1,62 @@
 <template>
-  <template v-if="showDailySummary">
+  <template v-if="showDailySummary && pageBreakBetweenScheduleEntries">
+    <template
+      v-for="(
+        {
+          day,
+          scheduleEntries: dayScheduleEntries,
+          summaryScheduleEntries: daySummaryScheduleEntries,
+        },
+        dayIndex
+      ) in days"
+    >
+      <Page
+        v-if="dayScheduleEntries.length === 0"
+        :id="isFirstPeriod && dayIndex === 0 ? id : undefined"
+        class="page program-page"
+        :size="config.options.pageSize || 'A4'"
+      >
+        <slot />
+        <template v-if="dayIndex === 0">
+          <TocSectionStartMarker :id="`${id}-${period.id}`" />
+          <Text
+            :id="`${id}-${period.id}`"
+            :bookmark="{ title: period.description, fit: true }"
+            class="program-period-title"
+            >{{ $tc('print.program.title') }}: {{ period.description }}</Text
+          >
+        </template>
+        <DaySummary :day="day" :schedule-entries="daySummaryScheduleEntries" />
+      </Page>
+      <Page
+        v-for="(scheduleEntry, entryIndex) in dayScheduleEntries"
+        :id="isFirstPeriod && dayIndex === 0 && entryIndex === 0 ? id : undefined"
+        class="page program-page"
+        :size="config.options.pageSize || 'A4'"
+      >
+        <slot />
+        <template v-if="dayIndex === 0 && entryIndex === 0">
+          <TocSectionStartMarker :id="`${id}-${period.id}`" />
+          <Text
+            :id="`${id}-${period.id}`"
+            :bookmark="{ title: period.description, fit: true }"
+            class="program-period-title"
+            >{{ $tc('print.program.title') }}: {{ period.description }}</Text
+          >
+        </template>
+        <DaySummary
+          v-if="entryIndex === 0"
+          :day="day"
+          :schedule-entries="daySummaryScheduleEntries"
+        />
+        <ScheduleEntryContents
+          :id="`${id}-${period.id}-${scheduleEntry.id}`"
+          :schedule-entry="scheduleEntry"
+        />
+      </Page>
+    </template>
+  </template>
+  <template v-else-if="showDailySummary">
     <Page
       v-for="(
         {
@@ -32,6 +89,29 @@
       />
     </Page>
   </template>
+  <template v-else-if="pageBreakBetweenScheduleEntries">
+    <Page
+      v-for="(scheduleEntry, entryIndex) in scheduleEntries"
+      :id="isFirstPeriod && entryIndex === 0 ? id : undefined"
+      class="page program-page"
+      :size="config.options.pageSize || 'A4'"
+    >
+      <slot />
+      <template v-if="entryIndex === 0">
+        <TocSectionStartMarker :id="`${id}-${period.id}`" />
+        <Text
+          :id="`${id}-${period.id}`"
+          :bookmark="{ title: period.description, fit: true }"
+          class="program-period-title"
+          >{{ $tc('print.program.title') }}: {{ period.description }}</Text
+        >
+      </template>
+      <ScheduleEntryContents
+        :id="`${id}-${period.id}-${scheduleEntry.id}`"
+        :schedule-entry="scheduleEntry"
+      />
+    </Page>
+  </template>
   <template v-else>
     <TocSectionStartMarker :id="`${id}-${period.id}`" />
     <Text
@@ -50,6 +130,7 @@
 <script>
 import PdfComponent from '@/pdf/PdfComponent.js'
 import ProgramDay from './ProgramDay.vue'
+import DaySummary from './DaySummary.vue'
 import ScheduleEntryContents from '../scheduleEntry/ScheduleEntryContents.vue'
 import { filterMatchScheduleEntry } from '@/common/helpers/filterMatchScheduleEntry.js'
 import { filterScheduleEntriesByDay } from '@/common/helpers/picasso.js'
@@ -63,12 +144,13 @@ const FULL_DAY_TIMES = [
 
 export default {
   name: 'ProgramPeriod',
-  components: { TocSectionStartMarker, ProgramDay, ScheduleEntryContents },
+  components: { TocSectionStartMarker, ProgramDay, DaySummary, ScheduleEntryContents },
   extends: PdfComponent,
   props: {
     period: { type: Object, required: true },
     filter: { type: Object, default: () => ({}) },
     showDailySummary: { type: Boolean, default: false },
+    pageBreakBetweenScheduleEntries: { type: Boolean, default: false },
     config: { type: Object, required: true },
     isFirstPeriod: { type: Boolean, default: false },
   },

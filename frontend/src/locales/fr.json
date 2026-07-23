@@ -407,7 +407,8 @@
           "portrait": "Portrait"
         },
         "programConfig": {
-          "dayOverview": "Aperçu des jours"
+          "dayOverview": "Aperçu des jours",
+          "pageBreakBetweenScheduleEntries": "Chaque activité sur une nouvelle page"
         }
       },
       "documents": {

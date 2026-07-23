@@ -329,7 +329,8 @@
           "orientation": "Layout della pagina"
         },
         "programConfig": {
-          "dayOverview": "Panoramica della giornata di stampa"
+          "dayOverview": "Panoramica della giornata di stampa",
+          "pageBreakBetweenScheduleEntries": "Ogni attività su una nuova pagina"
         }
       },
       "documents": {

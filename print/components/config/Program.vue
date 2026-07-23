@@ -9,6 +9,9 @@
       :filter="options.filter"
       :camp="camp"
       :show-daily-summary="options.dayOverview || false"
+      :page-break-between-schedule-entries="
+        options.pageBreakBetweenScheduleEntries || false
+      "
       :show-activities="true"
       :index="index"
       :page-size="pageSize"
