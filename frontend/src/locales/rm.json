@@ -267,6 +267,14 @@
         },
         "programConfig": {
           "dayOverview": "Survista dal di"
+        },
+        "notesPagesConfig": {
+          "pageCount": "Dumber da paginas",
+          "style": "Stil da pagina",
+          "styles": {
+            "lined": "Linià",
+            "blank": "Vid"
+          }
         }
       },
       "documents": {
@@ -303,7 +311,8 @@
           "Picasso": "Program general",
           "Program": "Program en detagl",
           "Story": "Fil cotschen",
-          "Toc": "Tavla da cuntegn"
+          "Toc": "Tavla da cuntegn",
+          "NotesPages": "Paginas da notizias"
         }
       },
       "printNuxt": {

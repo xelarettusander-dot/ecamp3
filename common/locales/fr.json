@@ -294,6 +294,9 @@
     },
     "toc": {
       "title": "Table des matières"
+    },
+    "notesPages": {
+      "title": "Pages de notes"
     }
   }
 }

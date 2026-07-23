@@ -281,6 +281,64 @@ describe.each(['A3', 'A4', 'A5'])('in %p format', (pageSize) => {
       )
     })
 
+    it('renders lined notes pages', async () => {
+      // given
+      const store = wrap(fullCampStoreContent)
+
+      // when
+      const result = renderVueToPdfStructure(CampPrint, {
+        store,
+        $tc: tcMock,
+        locale: 'de',
+        config: {
+          language: 'de',
+          documentName: 'Pfila 2023.pdf',
+          options: { pageNumbers: false, pageSize },
+          camp: store.get('/camps/c4cca3a51342'),
+          contents: [
+            {
+              type: 'NotesPages',
+              options: { pageCount: 2, style: 'lined' },
+            },
+          ],
+        },
+      })
+
+      // then
+      await expect(result).toMatchFileSnapshot(
+        `./__snapshots__/notes_pages_lined_${pageSize}.spec.json.snap`
+      )
+    })
+
+    it('renders blank notes pages', async () => {
+      // given
+      const store = wrap(fullCampStoreContent)
+
+      // when
+      const result = renderVueToPdfStructure(CampPrint, {
+        store,
+        $tc: tcMock,
+        locale: 'de',
+        config: {
+          language: 'de',
+          documentName: 'Pfila 2023.pdf',
+          options: { pageNumbers: false, pageSize },
+          camp: store.get('/camps/c4cca3a51342'),
+          contents: [
+            {
+              type: 'NotesPages',
+              options: { pageCount: 1, style: 'blank' },
+            },
+          ],
+        },
+      })
+
+      // then
+      await expect(result).toMatchFileSnapshot(
+        `./__snapshots__/notes_pages_blank_${pageSize}.spec.json.snap`
+      )
+    })
+
     describe('rendering a course activity list', () => {
       it('renders the activity list', async () => {
         // given

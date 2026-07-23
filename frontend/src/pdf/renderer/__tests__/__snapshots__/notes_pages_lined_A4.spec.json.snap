@@ -1,0 +1,941 @@
+{
+  "box": {},
+  "children": [
+    {
+      "box": {},
+      "children": [
+        {
+          "box": {},
+          "children": [],
+          "parent": [Circular],
+          "props": {
+            "render": [Function],
+          },
+          "style": {},
+          "type": "VIEW",
+        },
+        {
+          "box": {},
+          "children": [
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 1,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 2,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 3,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 4,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 5,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 6,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 7,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 8,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 9,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 10,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 11,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 12,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 13,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 14,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 15,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 16,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 17,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 18,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 19,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 20,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 21,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 22,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 23,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 24,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 25,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 26,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 27,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 28,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+          ],
+          "parent": [Circular],
+          "props": {
+            "class": "notes-pages-lines",
+            "key": 1,
+          },
+          "style": {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": "1",
+          },
+          "type": "VIEW",
+        },
+      ],
+      "parent": [Circular],
+      "props": {
+        "bookmark": "Notes pages",
+        "class": "page notes-pages-page",
+        "id": "entry-0",
+        "key": 1,
+        "size": "A4",
+      },
+      "style": {
+        "display": "flex",
+        "flexDirection": "column",
+        "fontFamily": "InterDisplay",
+        "fontSize": "12pt",
+        "padding": "30pt",
+      },
+      "type": "PAGE",
+    },
+    {
+      "box": {},
+      "children": [
+        {
+          "box": {},
+          "children": [
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 1,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 2,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 3,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 4,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 5,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 6,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 7,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 8,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 9,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 10,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 11,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 12,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 13,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 14,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 15,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 16,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 17,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 18,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 19,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 20,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 21,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 22,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 23,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 24,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 25,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 26,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 27,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+            {
+              "box": {},
+              "children": [],
+              "parent": [Circular],
+              "props": {
+                "class": "notes-pages-line",
+                "key": 28,
+              },
+              "style": {
+                "borderBottom": "0.5pt solid #bbbbbb",
+                "height": "18pt",
+                "width": "100%",
+              },
+              "type": "VIEW",
+            },
+          ],
+          "parent": [Circular],
+          "props": {
+            "class": "notes-pages-lines",
+            "key": 1,
+          },
+          "style": {
+            "display": "flex",
+            "flexDirection": "column",
+            "flexGrow": "1",
+          },
+          "type": "VIEW",
+        },
+      ],
+      "parent": [Circular],
+      "props": {
+        "bookmark": undefined,
+        "class": "page notes-pages-page",
+        "id": undefined,
+        "key": 2,
+        "size": "A4",
+      },
+      "style": {
+        "display": "flex",
+        "flexDirection": "column",
+        "fontFamily": "InterDisplay",
+        "fontSize": "12pt",
+        "padding": "30pt",
+      },
+      "type": "PAGE",
+    },
+  ],
+  "parent": null,
+  "props": {
+    "locale": "de",
+    "pdfVersion": "1.7",
+    "store": {
+      "get": [Function],
+      "href": [Function],
+    },
+    "tc": [Function],
+  },
+  "style": {},
+  "type": "DOCUMENT",
+}

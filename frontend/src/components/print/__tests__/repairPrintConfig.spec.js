@@ -8,6 +8,7 @@ import StoryConfig from '../config/StoryConfig.vue'
 import SafetyConsiderationsConfig from '../config/SafetyConsiderationsConfig.vue'
 import TocConfig from '../config/TocConfig.vue'
 import ActivityListConfig from '../config/ActivityListConfig.vue'
+import NotesPagesConfig from '../config/NotesPagesConfig.vue'
 
 describe('repairConfig', () => {
   const camp = {
@@ -95,6 +96,7 @@ describe('repairConfig', () => {
       StoryConfig,
       TocConfig,
       ActivityListConfig,
+      NotesPagesConfig,
     ].map((component) => [component.name.replace(/Config$/, ''), component.repairConfig])
   )
   const defaultFilter = {
@@ -4480,6 +4482,175 @@ describe('repairConfig', () => {
           options: defaultOptions,
           language: 'en-GB',
         })
+      })
+    })
+  })
+
+  describe('notesPages', () => {
+    test('adds missing options', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'NotesPages',
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'NotesPages',
+            options: { pageCount: 1, style: 'lined' },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test.each([1, 5, 20])('allows pageCount %p', async (pageCount) => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'NotesPages',
+            options: { pageCount, style: 'blank' },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'NotesPages',
+            options: { pageCount, style: 'blank' },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test.each([0, -1, 21, 'many', null, 1.5])(
+      'repairs invalid pageCount %p',
+      async (pageCount) => {
+        // given
+        const config = {
+          camp: '/camps/1a2b3c4d',
+          contents: [
+            {
+              type: 'NotesPages',
+              options: { pageCount, style: 'lined' },
+            },
+          ],
+          documentName: 'test camp',
+          options: defaultOptions,
+          language: 'en-GB',
+        }
+
+        // when
+        const result = repairConfig(config, ...args)
+
+        // then
+        expect(result).toEqual({
+          camp: '/camps/1a2b3c4d',
+          contents: [
+            {
+              type: 'NotesPages',
+              options: { pageCount: 1, style: 'lined' },
+            },
+          ],
+          documentName: 'test camp',
+          options: defaultOptions,
+          language: 'en-GB',
+        })
+      }
+    )
+
+    test.each(['lined', 'blank'])('allows style %p', async (style) => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'NotesPages',
+            options: { pageCount: 2, style },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'NotesPages',
+            options: { pageCount: 2, style },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('repairs invalid style', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'NotesPages',
+            options: { pageCount: 3, style: 'dotted' },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'NotesPages',
+            options: { pageCount: 3, style: 'lined' },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
       })
     })
   })
