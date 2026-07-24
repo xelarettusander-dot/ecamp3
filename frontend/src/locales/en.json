@@ -410,7 +410,11 @@
           "portrait": "Portrait"
         },
         "programConfig": {
-          "dayOverview": "print day overview"
+          "dayOverview": "print day overview",
+          "pageBreakBetweenScheduleEntries": "Start each activity on a new page",
+          "pageBreakBeforeCategories": "New page before categories",
+          "pageBreakAfterCategories": "New page after categories",
+          "pageBreakAfterDayOverview": "New page after day overview"
         }
       },
       "documents": {

@@ -407,7 +407,11 @@
           "portrait": "Portrait"
         },
         "programConfig": {
-          "dayOverview": "Aperçu des jours"
+          "dayOverview": "Aperçu des jours",
+          "pageBreakBetweenScheduleEntries": "Chaque activité sur une nouvelle page",
+          "pageBreakBeforeCategories": "Nouvelle page avant les catégories",
+          "pageBreakAfterCategories": "Saut de page après les catégories",
+          "pageBreakAfterDayOverview": "Nouvelle page après l’aperçu du jour"
         }
       },
       "documents": {
