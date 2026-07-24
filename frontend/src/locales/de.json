@@ -411,7 +411,9 @@
         },
         "programConfig": {
           "dayOverview": "Tagesübersicht",
-          "pageBreakBetweenScheduleEntries": "Jeder Programmpunkt auf neuer Seite"
+          "pageBreakBetweenScheduleEntries": "Jeder Programmpunkt auf neuer Seite",
+          "pageBreakBeforeCategories": "Neue Seite vor Programmarten",
+          "pageBreakAfterCategories": "Seitenumbruch nach Programmarten"
         }
       },
       "documents": {

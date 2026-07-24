@@ -330,7 +330,9 @@
         },
         "programConfig": {
           "dayOverview": "Panoramica della giornata di stampa",
-          "pageBreakBetweenScheduleEntries": "Ogni attività su una nuova pagina"
+          "pageBreakBetweenScheduleEntries": "Ogni attività su una nuova pagina",
+          "pageBreakBeforeCategories": "Nuova pagina prima delle categorie",
+          "pageBreakAfterCategories": "Interruzione di pagina dopo le categorie"
         }
       },
       "documents": {

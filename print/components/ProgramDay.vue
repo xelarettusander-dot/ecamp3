@@ -2,7 +2,7 @@
   <div
     :class="{
       'program-day-section': showDailySummary,
-      'program-day-with-entry-breaks': pageBreakBetweenScheduleEntries,
+      'program-day-break': breakBeforeDay,
     }"
   >
     <day-summary
@@ -13,9 +13,11 @@
 
     <div v-if="showActivities">
       <div
-        v-for="scheduleEntry in scheduleEntries"
+        v-for="(scheduleEntry, entryIndex) in scheduleEntries"
         :key="scheduleEntry.id"
-        :class="{ 'schedule-entry-page': pageBreakBetweenScheduleEntries }"
+        :class="{
+          'schedule-entry-break': shouldBreakBeforeEntry(scheduleEntry, entryIndex),
+        }"
       >
         <schedule-entry :schedule-entry="scheduleEntry" :index="index" />
       </div>
@@ -25,6 +27,10 @@
 
 <script>
 import DaySummary from '~/components/DaySummary.vue'
+import {
+  hasProgramPageBreaks,
+  shouldBreakBeforeScheduleEntry,
+} from '@/common/helpers/programPageBreak.js'
 
 export default {
   components: { DaySummary },
@@ -32,11 +38,43 @@ export default {
     day: { type: Object, required: true },
     filter: { type: Object, default: () => ({}) },
     showDailySummary: { type: Boolean, required: true },
-    pageBreakBetweenScheduleEntries: { type: Boolean, default: false },
+    pageBreakOptions: {
+      type: Object,
+      default: () => ({
+        pageBreakBetweenScheduleEntries: false,
+        pageBreakBeforeCategories: [],
+        pageBreakAfterCategories: [],
+      }),
+    },
+    previousScheduleEntry: { type: Object, default: null },
     showActivities: { type: Boolean, required: true },
     index: { type: Number, required: true },
     scheduleEntries: { type: Array, required: true },
     summaryScheduleEntries: { type: Array, default: () => [] },
+  },
+  computed: {
+    breakBeforeDay() {
+      if (!hasProgramPageBreaks(this.pageBreakOptions)) return false
+      if (!this.previousScheduleEntry || !this.scheduleEntries.length) return false
+      return shouldBreakBeforeScheduleEntry(
+        this.scheduleEntries[0],
+        this.previousScheduleEntry,
+        this.pageBreakOptions
+      )
+    },
+  },
+  methods: {
+    shouldBreakBeforeEntry(scheduleEntry, entryIndex) {
+      if (entryIndex === 0) {
+        // Day-level break handles the first entry when needed
+        return false
+      }
+      return shouldBreakBeforeScheduleEntry(
+        scheduleEntry,
+        this.scheduleEntries[entryIndex - 1],
+        this.pageBreakOptions
+      )
+    },
   },
 }
 </script>
@@ -46,11 +84,11 @@ export default {
   break-before: page;
 }
 
-.program-day-with-entry-breaks + .program-day-with-entry-breaks {
+.program-day-break {
   break-before: page;
 }
 
-.schedule-entry-page + .schedule-entry-page {
+.schedule-entry-break {
   break-before: page;
 }
 </style>

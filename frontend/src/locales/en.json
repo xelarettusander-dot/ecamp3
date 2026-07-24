@@ -411,7 +411,9 @@
         },
         "programConfig": {
           "dayOverview": "print day overview",
-          "pageBreakBetweenScheduleEntries": "Start each activity on a new page"
+          "pageBreakBetweenScheduleEntries": "Start each activity on a new page",
+          "pageBreakBeforeCategories": "New page before categories",
+          "pageBreakAfterCategories": "New page after categories"
         }
       },
       "documents": {

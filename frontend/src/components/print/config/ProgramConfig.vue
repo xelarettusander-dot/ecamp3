@@ -22,6 +22,54 @@
       :label="$t('components.print.config.programConfig.pageBreakBetweenScheduleEntries')"
       @update:model-value="$emit('update:modelValue', modelValue)"
     />
+    <template v-if="!options.pageBreakBetweenScheduleEntries">
+      <e-select
+        v-model="options.pageBreakBeforeCategories"
+        :items="categoryUris"
+        path="pageBreakBeforeCategories"
+        multiple
+        :label="$t('components.print.config.programConfig.pageBreakBeforeCategories')"
+        @update:model-value="$emit('update:modelValue', modelValue)"
+      >
+        <template #item="{ item, props }">
+          <v-list-item v-bind="props">
+            <template #title>
+              <CategoryChip :category="categoriesByUri[item.value]" dense class="mr-1" />
+              {{ categoriesByUri[item.value]?.name }}
+            </template>
+          </v-list-item>
+        </template>
+        <template #selection="{ item }">
+          <div class="v-select__selection">
+            <CategoryChip :category="categoriesByUri[item.value]" dense class="mr-1" />
+            {{ categoriesByUri[item.value]?.name }}
+          </div>
+        </template>
+      </e-select>
+      <e-select
+        v-model="options.pageBreakAfterCategories"
+        :items="categoryUris"
+        path="pageBreakAfterCategories"
+        multiple
+        :label="$t('components.print.config.programConfig.pageBreakAfterCategories')"
+        @update:model-value="$emit('update:modelValue', modelValue)"
+      >
+        <template #item="{ item, props }">
+          <v-list-item v-bind="props">
+            <template #title>
+              <CategoryChip :category="categoriesByUri[item.value]" dense class="mr-1" />
+              {{ categoriesByUri[item.value]?.name }}
+            </template>
+          </v-list-item>
+        </template>
+        <template #selection="{ item }">
+          <div class="v-select__selection">
+            <CategoryChip :category="categoriesByUri[item.value]" dense class="mr-1" />
+            {{ categoriesByUri[item.value]?.name }}
+          </div>
+        </template>
+      </e-select>
+    </template>
     <div class="flex-grow-1"></div>
     <DialogScheduleEntryFilter
       :camp="camp"
@@ -35,12 +83,14 @@
 
 <script>
 import { filterMatchScheduleEntry } from '@/common/helpers/filterMatchScheduleEntry.js'
+import { repairCategoryUriList } from '@/common/helpers/programPageBreak.js'
 import DialogScheduleEntryFilter from './DialogScheduleEntryFilter.vue'
+import CategoryChip from '@/components/generic/CategoryChip.vue'
 import repairFilterConfig from '../../program/repairFilterConfig.js'
 
 export default {
   name: 'ProgramConfig',
-  components: { DialogScheduleEntryFilter },
+  components: { DialogScheduleEntryFilter, CategoryChip },
   props: {
     modelValue: { type: Object, required: true },
     camp: { type: Object, required: true },
@@ -60,6 +110,14 @@ export default {
         value: p._meta.self,
         text: p.description,
       }))
+    },
+    categoriesByUri() {
+      return Object.fromEntries(
+        this.camp.categories().items.map((category) => [category._meta.self, category])
+      )
+    },
+    categoryUris() {
+      return Object.keys(this.categoriesByUri)
     },
     selectedPeriods() {
       if (!this.options.periods) return this.camp.periods().items
@@ -89,6 +147,8 @@ export default {
         camp.periods().items.length === 1 ? [camp.periods().items[0]._meta.self] : [],
       dayOverview: true,
       pageBreakBetweenScheduleEntries: false,
+      pageBreakBeforeCategories: [],
+      pageBreakAfterCategories: [],
       filter: repairFilterConfig(null, camp),
     }
   },
@@ -110,6 +170,14 @@ export default {
     if (typeof config.options.pageBreakBetweenScheduleEntries !== 'boolean') {
       config.options.pageBreakBetweenScheduleEntries = false
     }
+    config.options.pageBreakBeforeCategories = repairCategoryUriList(
+      config.options.pageBreakBeforeCategories,
+      camp
+    )
+    config.options.pageBreakAfterCategories = repairCategoryUriList(
+      config.options.pageBreakAfterCategories,
+      camp
+    )
     config.options.filter = repairFilterConfig(config.options.filter, camp)
     return config
   },

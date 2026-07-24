@@ -1,5 +1,5 @@
 <template>
-  <template v-if="showDailySummary || pageBreakBetweenScheduleEntries">
+  <template v-if="showDailySummary || hasPageBreaks">
     <ProgramPeriod
       v-for="(period, periodIndex) in periods"
       :id="id"
@@ -8,7 +8,7 @@
       :config="config"
       :is-first-period="periodIndex === 0"
       :show-daily-summary="showDailySummary"
-      :page-break-between-schedule-entries="pageBreakBetweenScheduleEntries"
+      :page-break-options="pageBreakOptions"
     >
       <slot />
     </ProgramPeriod>
@@ -21,6 +21,7 @@
       :period="period"
       :filter="content.options.filter"
       :config="config"
+      :page-break-options="pageBreakOptions"
     />
   </Page>
 </template>
@@ -28,6 +29,7 @@
 import PdfComponent from '@/pdf/PdfComponent.js'
 import ProgramPeriod from './ProgramPeriod.vue'
 import { filterMatchScheduleEntry } from '@/common/helpers/filterMatchScheduleEntry.js'
+import { hasProgramPageBreaks } from '@/common/helpers/programPageBreak.js'
 
 export default {
   name: 'Program',
@@ -41,8 +43,16 @@ export default {
     showDailySummary() {
       return this.content.options.dayOverview || false
     },
-    pageBreakBetweenScheduleEntries() {
-      return this.content.options.pageBreakBetweenScheduleEntries || false
+    pageBreakOptions() {
+      return {
+        pageBreakBetweenScheduleEntries:
+          this.content.options.pageBreakBetweenScheduleEntries || false,
+        pageBreakBeforeCategories: this.content.options.pageBreakBeforeCategories || [],
+        pageBreakAfterCategories: this.content.options.pageBreakAfterCategories || [],
+      }
+    },
+    hasPageBreaks() {
+      return hasProgramPageBreaks(this.pageBreakOptions)
     },
     periods() {
       return this.content.options.periods

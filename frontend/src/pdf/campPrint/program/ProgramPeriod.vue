@@ -1,17 +1,12 @@
 <template>
-  <template v-if="showDailySummary && pageBreakBetweenScheduleEntries">
+  <template v-if="showDailySummary && hasPageBreaks">
     <template
       v-for="(
-        {
-          day,
-          scheduleEntries: dayScheduleEntries,
-          summaryScheduleEntries: daySummaryScheduleEntries,
-        },
-        dayIndex
-      ) in days"
+        { day, chunks, summaryScheduleEntries: daySummaryScheduleEntries }, dayIndex
+      ) in daysWithChunks"
     >
       <Page
-        v-if="dayScheduleEntries.length === 0"
+        v-if="chunks.length === 0"
         :id="isFirstPeriod && dayIndex === 0 ? id : undefined"
         class="page program-page"
         :size="config.options.pageSize || 'A4'"
@@ -29,13 +24,13 @@
         <DaySummary :day="day" :schedule-entries="daySummaryScheduleEntries" />
       </Page>
       <Page
-        v-for="(scheduleEntry, entryIndex) in dayScheduleEntries"
-        :id="isFirstPeriod && dayIndex === 0 && entryIndex === 0 ? id : undefined"
+        v-for="(chunk, chunkIndex) in chunks"
+        :id="isFirstPeriod && dayIndex === 0 && chunkIndex === 0 ? id : undefined"
         class="page program-page"
         :size="config.options.pageSize || 'A4'"
       >
         <slot />
-        <template v-if="dayIndex === 0 && entryIndex === 0">
+        <template v-if="dayIndex === 0 && chunkIndex === 0">
           <TocSectionStartMarker :id="`${id}-${period.id}`" />
           <Text
             :id="`${id}-${period.id}`"
@@ -45,11 +40,12 @@
           >
         </template>
         <DaySummary
-          v-if="entryIndex === 0"
+          v-if="chunkIndex === 0"
           :day="day"
           :schedule-entries="daySummaryScheduleEntries"
         />
         <ScheduleEntryContents
+          v-for="scheduleEntry in chunk"
           :id="`${id}-${period.id}-${scheduleEntry.id}`"
           :schedule-entry="scheduleEntry"
         />
@@ -89,15 +85,15 @@
       />
     </Page>
   </template>
-  <template v-else-if="pageBreakBetweenScheduleEntries">
+  <template v-else-if="hasPageBreaks">
     <Page
-      v-for="(scheduleEntry, entryIndex) in scheduleEntries"
-      :id="isFirstPeriod && entryIndex === 0 ? id : undefined"
+      v-for="(chunk, chunkIndex) in scheduleEntryChunks"
+      :id="isFirstPeriod && chunkIndex === 0 ? id : undefined"
       class="page program-page"
       :size="config.options.pageSize || 'A4'"
     >
       <slot />
-      <template v-if="entryIndex === 0">
+      <template v-if="chunkIndex === 0">
         <TocSectionStartMarker :id="`${id}-${period.id}`" />
         <Text
           :id="`${id}-${period.id}`"
@@ -107,6 +103,7 @@
         >
       </template>
       <ScheduleEntryContents
+        v-for="scheduleEntry in chunk"
         :id="`${id}-${period.id}-${scheduleEntry.id}`"
         :schedule-entry="scheduleEntry"
       />
@@ -134,6 +131,10 @@ import DaySummary from './DaySummary.vue'
 import ScheduleEntryContents from '../scheduleEntry/ScheduleEntryContents.vue'
 import { filterMatchScheduleEntry } from '@/common/helpers/filterMatchScheduleEntry.js'
 import { filterScheduleEntriesByDay } from '@/common/helpers/picasso.js'
+import {
+  chunkScheduleEntriesByPageBreaks,
+  hasProgramPageBreaks,
+} from '@/common/helpers/programPageBreak.js'
 import TocSectionStartMarker from '../TocSectionStartMarker.vue'
 import sortBy from 'lodash-es/sortBy.js'
 
@@ -150,11 +151,21 @@ export default {
     period: { type: Object, required: true },
     filter: { type: Object, default: () => ({}) },
     showDailySummary: { type: Boolean, default: false },
-    pageBreakBetweenScheduleEntries: { type: Boolean, default: false },
+    pageBreakOptions: {
+      type: Object,
+      default: () => ({
+        pageBreakBetweenScheduleEntries: false,
+        pageBreakBeforeCategories: [],
+        pageBreakAfterCategories: [],
+      }),
+    },
     config: { type: Object, required: true },
     isFirstPeriod: { type: Boolean, default: false },
   },
   computed: {
+    hasPageBreaks() {
+      return hasProgramPageBreaks(this.pageBreakOptions)
+    },
     scheduleEntries() {
       const scheduleEntries = this.period
         .scheduleEntries()
@@ -169,6 +180,9 @@ export default {
           (day) => filterScheduleEntriesByDay([scheduleEntry], day, FULL_DAY_TIMES).length
         )
       )
+    },
+    scheduleEntryChunks() {
+      return chunkScheduleEntriesByPageBreaks(this.scheduleEntries, this.pageBreakOptions)
     },
     overviewScheduleEntries() {
       return this.period.scheduleEntries().items.filter((scheduleEntry) => {
@@ -199,6 +213,15 @@ export default {
           ),
         }))
         .filter(({ summaryScheduleEntries }) => summaryScheduleEntries.length)
+    },
+    daysWithChunks() {
+      return this.days.map((dayData) => ({
+        ...dayData,
+        chunks: chunkScheduleEntriesByPageBreaks(
+          dayData.scheduleEntries,
+          this.pageBreakOptions
+        ),
+      }))
     },
   },
   methods: {

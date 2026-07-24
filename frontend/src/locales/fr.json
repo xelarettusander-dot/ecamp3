@@ -408,7 +408,9 @@
         },
         "programConfig": {
           "dayOverview": "Aperçu des jours",
-          "pageBreakBetweenScheduleEntries": "Chaque activité sur une nouvelle page"
+          "pageBreakBetweenScheduleEntries": "Chaque activité sur une nouvelle page",
+          "pageBreakBeforeCategories": "Nouvelle page avant les catégories",
+          "pageBreakAfterCategories": "Saut de page après les catégories"
         }
       },
       "documents": {
