@@ -15,7 +15,7 @@
       <Text v-if="address" class="picasso-footer-field">{{ address }}</Text>
       <Text v-if="dates" class="picasso-footer-field">{{ dates }}</Text>
     </View>
-    <View v-if="showLeaders" class="picasso-footer-column">
+    <View class="picasso-footer-column">
       <Text v-if="leaders" class="picasso-footer-field">{{
         $tc('print.picasso.picassoFooter.leaders', { leaders })
       }}</Text>
@@ -40,7 +40,6 @@ export default {
   props: {
     period: { type: Object, required: true },
     locale: { type: String, default: 'en' },
-    showLeaders: { type: Boolean, default: true },
   },
   computed: {
     camp() {

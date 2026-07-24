@@ -34,15 +34,12 @@
         :schedule-entries="scheduleEntries"
         :class="{ 'picasso-day-column-left-border': day.id === days[0].id }"
         :config="config"
+        :show-responsibles="showResponsibles"
       />
       <TimeColumn :times="times.slice(0, times.length - 1)" align="left" />
     </View>
     <Categories :period="period" :schedule-entries="scheduleEntries" />
-    <PicassoFooter
-      :period="period"
-      :locale="config.locale"
-      :show-leaders="content.options.showLeaders !== false"
-    />
+    <PicassoFooter :period="period" :locale="config.locale" />
   </Page>
 </template>
 <script>
@@ -103,6 +100,9 @@ export default {
       return this.period.scheduleEntries().items.filter((scheduleEntry) => {
         return filterMatchScheduleEntry(scheduleEntry, this.content.options.filter)
       })
+    },
+    showResponsibles() {
+      return this.content.options.showLeaders !== false
     },
   },
 }

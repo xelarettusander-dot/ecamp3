@@ -408,7 +408,7 @@
           "landscape": "Querformat",
           "periods": "Lagerabschnitt(e)",
           "portrait": "Hochformat",
-          "showLeaders": "Leitung anzeigen"
+          "showLeaders": "Leiter-Kreise anzeigen"
         },
         "programConfig": {
           "dayOverview": "Tagesübersicht"

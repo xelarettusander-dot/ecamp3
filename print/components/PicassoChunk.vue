@@ -25,6 +25,7 @@
           :days="days"
           :times="times"
           :schedule-entries="scheduleEntries"
+          :show-responsibles="showLeaders"
         />
       </div>
       <div class="tw-flex-initial categories fullwidth text-sm-relative">
@@ -56,13 +57,8 @@
           <span v-if="address">{{ address }}</span>
           <span v-if="dates">{{ dates }}</span>
         </div>
-        <div v-if="showLeaders" class="footer-column">
-          <i18n-t
-            v-if="leaderNameList"
-            tag="span"
-            keypath="print.picasso.picassoFooter.leaders"
-            scope="global"
-          >
+        <div class="footer-column">
+          <i18n-t tag="span" keypath="print.picasso.picassoFooter.leaders" scope="global">
             <template #leaders>
               {{ leaderNameList }}
             </template>

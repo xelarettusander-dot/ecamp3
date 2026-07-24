@@ -408,7 +408,7 @@
           "landscape": "Landscape",
           "periods": "Period(s)",
           "portrait": "Portrait",
-          "showLeaders": "Show leaders"
+          "showLeaders": "Show responsible circles"
         },
         "programConfig": {
           "dayOverview": "print day overview"

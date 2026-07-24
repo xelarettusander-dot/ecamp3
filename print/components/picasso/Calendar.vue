@@ -35,6 +35,7 @@
               :displayed-times="displayedTimes"
               :day="day"
               :schedule-entries="scheduleEntries"
+              :show-responsibles="showResponsibles"
             />
           </div>
         </div>
@@ -49,6 +50,7 @@ export default {
     days: { type: Array, required: true },
     times: { type: Array, required: true },
     scheduleEntries: { type: Array, default: () => [] },
+    showResponsibles: { type: Boolean, default: true },
   },
   computed: {
     displayedTimes() {

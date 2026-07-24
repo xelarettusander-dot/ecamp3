@@ -11,6 +11,7 @@
       </a>
     </div>
     <span
+      v-if="showResponsibles"
       class="tw-float-right tw-italic ml-1"
       :style="{ color: getActivityTextColor(scheduleEntry) }"
     >
@@ -26,6 +27,7 @@ import { contrastColor } from '@/common/helpers/colors.js'
 export default {
   props: {
     scheduleEntry: { type: Object, required: true },
+    showResponsibles: { type: Boolean, default: true },
   },
   methods: {
     getActivityColor(scheduleEntry) {
