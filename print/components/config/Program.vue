@@ -9,6 +9,7 @@
       :filter="options.filter"
       :camp="camp"
       :show-daily-summary="options.dayOverview || false"
+      :page-break-options="pageBreakOptions"
       :show-activities="true"
       :index="index"
       :page-size="pageSize"
@@ -17,6 +18,8 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
 const props = defineProps({
   options: { type: Object, required: false, default: null },
   camp: { type: Object, required: true },
@@ -24,6 +27,14 @@ const props = defineProps({
   index: { type: Number, required: true },
   pageSize: { type: String, default: 'a4' },
 })
+
+const pageBreakOptions = computed(() => ({
+  pageBreakAfterDayOverview: props.options?.pageBreakAfterDayOverview || false,
+  pageBreakBetweenScheduleEntries:
+    props.options?.pageBreakBetweenScheduleEntries || false,
+  pageBreakBeforeCategories: props.options?.pageBreakBeforeCategories || [],
+  pageBreakAfterCategories: props.options?.pageBreakAfterCategories || [],
+}))
 
 const { $api } = useNuxtApp()
 
