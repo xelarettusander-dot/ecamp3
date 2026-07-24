@@ -11,7 +11,10 @@
       :schedule-entries="summaryScheduleEntries"
     />
 
-    <div v-if="showActivities">
+    <div
+      v-if="showActivities"
+      :class="{ 'program-activities-after-overview': pageBreakAfterDayOverview }"
+    >
       <div
         v-for="(scheduleEntry, entryIndex) in scheduleEntries"
         :key="scheduleEntry.id"
@@ -41,6 +44,7 @@ export default {
     pageBreakOptions: {
       type: Object,
       default: () => ({
+        pageBreakAfterDayOverview: false,
         pageBreakBetweenScheduleEntries: false,
         pageBreakBeforeCategories: [],
         pageBreakAfterCategories: [],
@@ -53,6 +57,9 @@ export default {
     summaryScheduleEntries: { type: Array, default: () => [] },
   },
   computed: {
+    pageBreakAfterDayOverview() {
+      return this.showDailySummary && !!this.pageBreakOptions.pageBreakAfterDayOverview
+    },
     breakBeforeDay() {
       if (!hasProgramPageBreaks(this.pageBreakOptions)) return false
       if (!this.previousScheduleEntry || !this.scheduleEntries.length) return false
@@ -85,6 +92,10 @@ export default {
 }
 
 .program-day-break {
+  break-before: page;
+}
+
+.program-activities-after-overview {
   break-before: page;
 }
 

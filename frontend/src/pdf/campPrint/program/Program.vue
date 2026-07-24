@@ -45,6 +45,8 @@ export default {
     },
     pageBreakOptions() {
       return {
+        pageBreakAfterDayOverview:
+          this.content.options.pageBreakAfterDayOverview || false,
         pageBreakBetweenScheduleEntries:
           this.content.options.pageBreakBetweenScheduleEntries || false,
         pageBreakBeforeCategories: this.content.options.pageBreakBeforeCategories || [],

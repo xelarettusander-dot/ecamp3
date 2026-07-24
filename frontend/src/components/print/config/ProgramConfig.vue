@@ -17,6 +17,13 @@
       @update:model-value="$emit('update:modelValue', modelValue)"
     />
     <e-checkbox
+      v-if="options.dayOverview"
+      v-model="options.pageBreakAfterDayOverview"
+      path="pageBreakAfterDayOverview"
+      :label="$t('components.print.config.programConfig.pageBreakAfterDayOverview')"
+      @update:model-value="$emit('update:modelValue', modelValue)"
+    />
+    <e-checkbox
       v-model="options.pageBreakBetweenScheduleEntries"
       path="pageBreakBetweenScheduleEntries"
       :label="$t('components.print.config.programConfig.pageBreakBetweenScheduleEntries')"
@@ -146,6 +153,7 @@ export default {
       periods:
         camp.periods().items.length === 1 ? [camp.periods().items[0]._meta.self] : [],
       dayOverview: true,
+      pageBreakAfterDayOverview: false,
       pageBreakBetweenScheduleEntries: false,
       pageBreakBeforeCategories: [],
       pageBreakAfterCategories: [],
@@ -167,6 +175,9 @@ export default {
       })
     }
     if (typeof config.options.dayOverview !== 'boolean') config.options.dayOverview = true
+    if (typeof config.options.pageBreakAfterDayOverview !== 'boolean') {
+      config.options.pageBreakAfterDayOverview = false
+    }
     if (typeof config.options.pageBreakBetweenScheduleEntries !== 'boolean') {
       config.options.pageBreakBetweenScheduleEntries = false
     }

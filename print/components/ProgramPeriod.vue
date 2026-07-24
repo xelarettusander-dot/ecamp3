@@ -44,6 +44,7 @@ const props = defineProps({
   pageBreakOptions: {
     type: Object,
     default: () => ({
+      pageBreakAfterDayOverview: false,
       pageBreakBetweenScheduleEntries: false,
       pageBreakBeforeCategories: [],
       pageBreakAfterCategories: [],

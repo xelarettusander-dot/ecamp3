@@ -29,6 +29,7 @@ const props = defineProps({
 })
 
 const pageBreakOptions = computed(() => ({
+  pageBreakAfterDayOverview: props.options?.pageBreakAfterDayOverview || false,
   pageBreakBetweenScheduleEntries:
     props.options?.pageBreakBetweenScheduleEntries || false,
   pageBreakBeforeCategories: props.options?.pageBreakBeforeCategories || [],

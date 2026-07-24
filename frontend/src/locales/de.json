@@ -413,7 +413,8 @@
           "dayOverview": "Tagesübersicht",
           "pageBreakBetweenScheduleEntries": "Jeder Programmpunkt auf neuer Seite",
           "pageBreakBeforeCategories": "Neue Seite vor Programmarten",
-          "pageBreakAfterCategories": "Seitenumbruch nach Programmarten"
+          "pageBreakAfterCategories": "Seitenumbruch nach Programmarten",
+          "pageBreakAfterDayOverview": "Neue Seite nach Tagesübersicht"
         }
       },
       "documents": {

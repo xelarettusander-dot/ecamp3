@@ -1,12 +1,12 @@
 <template>
-  <template v-if="showDailySummary && hasPageBreaks">
+  <template v-if="showDailySummary">
     <template
       v-for="(
         { day, chunks, summaryScheduleEntries: daySummaryScheduleEntries }, dayIndex
       ) in daysWithChunks"
     >
       <Page
-        v-if="chunks.length === 0"
+        v-if="pageBreakAfterDayOverview || chunks.length === 0"
         :id="isFirstPeriod && dayIndex === 0 ? id : undefined"
         class="page program-page"
         :size="config.options.pageSize || 'A4'"
@@ -25,12 +25,19 @@
       </Page>
       <Page
         v-for="(chunk, chunkIndex) in chunks"
-        :id="isFirstPeriod && dayIndex === 0 && chunkIndex === 0 ? id : undefined"
+        :id="
+          isFirstPeriod &&
+          dayIndex === 0 &&
+          chunkIndex === 0 &&
+          !pageBreakAfterDayOverview
+            ? id
+            : undefined
+        "
         class="page program-page"
         :size="config.options.pageSize || 'A4'"
       >
         <slot />
-        <template v-if="dayIndex === 0 && chunkIndex === 0">
+        <template v-if="dayIndex === 0 && chunkIndex === 0 && !pageBreakAfterDayOverview">
           <TocSectionStartMarker :id="`${id}-${period.id}`" />
           <Text
             :id="`${id}-${period.id}`"
@@ -40,7 +47,7 @@
           >
         </template>
         <DaySummary
-          v-if="chunkIndex === 0"
+          v-if="chunkIndex === 0 && !pageBreakAfterDayOverview"
           :day="day"
           :schedule-entries="daySummaryScheduleEntries"
         />
@@ -51,39 +58,6 @@
         />
       </Page>
     </template>
-  </template>
-  <template v-else-if="showDailySummary">
-    <Page
-      v-for="(
-        {
-          day,
-          scheduleEntries: dayScheduleEntries,
-          summaryScheduleEntries: daySummaryScheduleEntries,
-        },
-        dayIndex
-      ) in days"
-      :id="isFirstPeriod && dayIndex === 0 ? id : undefined"
-      class="page program-page"
-      :size="config.options.pageSize || 'A4'"
-    >
-      <slot />
-      <template v-if="dayIndex === 0">
-        <TocSectionStartMarker :id="`${id}-${period.id}`" />
-        <Text
-          :id="`${id}-${period.id}`"
-          :bookmark="{ title: period.description, fit: true }"
-          class="program-period-title"
-          >{{ $tc('print.program.title') }}: {{ period.description }}</Text
-        >
-      </template>
-      <ProgramDay
-        :id="id"
-        :period="period"
-        :day="day"
-        :schedule-entries="dayScheduleEntries"
-        :summary-schedule-entries="daySummaryScheduleEntries"
-      />
-    </Page>
   </template>
   <template v-else-if="hasPageBreaks">
     <Page
@@ -126,7 +100,6 @@
 </template>
 <script>
 import PdfComponent from '@/pdf/PdfComponent.js'
-import ProgramDay from './ProgramDay.vue'
 import DaySummary from './DaySummary.vue'
 import ScheduleEntryContents from '../scheduleEntry/ScheduleEntryContents.vue'
 import { filterMatchScheduleEntry } from '@/common/helpers/filterMatchScheduleEntry.js'
@@ -145,7 +118,7 @@ const FULL_DAY_TIMES = [
 
 export default {
   name: 'ProgramPeriod',
-  components: { TocSectionStartMarker, ProgramDay, DaySummary, ScheduleEntryContents },
+  components: { TocSectionStartMarker, DaySummary, ScheduleEntryContents },
   extends: PdfComponent,
   props: {
     period: { type: Object, required: true },
@@ -154,6 +127,7 @@ export default {
     pageBreakOptions: {
       type: Object,
       default: () => ({
+        pageBreakAfterDayOverview: false,
         pageBreakBetweenScheduleEntries: false,
         pageBreakBeforeCategories: [],
         pageBreakAfterCategories: [],
@@ -165,6 +139,9 @@ export default {
   computed: {
     hasPageBreaks() {
       return hasProgramPageBreaks(this.pageBreakOptions)
+    },
+    pageBreakAfterDayOverview() {
+      return this.pageBreakOptions.pageBreakAfterDayOverview || false
     },
     scheduleEntries() {
       const scheduleEntries = this.period
@@ -217,10 +194,14 @@ export default {
     daysWithChunks() {
       return this.days.map((dayData) => ({
         ...dayData,
-        chunks: chunkScheduleEntriesByPageBreaks(
-          dayData.scheduleEntries,
-          this.pageBreakOptions
-        ),
+        chunks: this.hasPageBreaks
+          ? chunkScheduleEntriesByPageBreaks(
+              dayData.scheduleEntries,
+              this.pageBreakOptions
+            )
+          : dayData.scheduleEntries.length
+            ? [dayData.scheduleEntries]
+            : [],
       }))
     },
   },

@@ -332,7 +332,8 @@
           "dayOverview": "Panoramica della giornata di stampa",
           "pageBreakBetweenScheduleEntries": "Ogni attività su una nuova pagina",
           "pageBreakBeforeCategories": "Nuova pagina prima delle categorie",
-          "pageBreakAfterCategories": "Interruzione di pagina dopo le categorie"
+          "pageBreakAfterCategories": "Interruzione di pagina dopo le categorie",
+          "pageBreakAfterDayOverview": "Nuova pagina dopo la panoramica del giorno"
         }
       },
       "documents": {
