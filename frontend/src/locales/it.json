@@ -326,7 +326,8 @@
           "activity": "Attività"
         },
         "picassoConfig": {
-          "orientation": "Layout della pagina"
+          "orientation": "Layout della pagina",
+          "showLeaders": "Mostra i responsabili"
         },
         "programConfig": {
           "dayOverview": "Panoramica della giornata di stampa"

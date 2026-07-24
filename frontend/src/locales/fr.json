@@ -404,7 +404,8 @@
           "orientation": "Mise en page",
           "landscape": "Paysage",
           "periods": "Période(s) du camp",
-          "portrait": "Portrait"
+          "portrait": "Portrait",
+          "showLeaders": "Afficher les responsables"
         },
         "programConfig": {
           "dayOverview": "Aperçu des jours"

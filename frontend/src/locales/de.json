@@ -407,7 +407,8 @@
           "orientation": "Seitenlayout",
           "landscape": "Querformat",
           "periods": "Lagerabschnitt(e)",
-          "portrait": "Hochformat"
+          "portrait": "Hochformat",
+          "showLeaders": "Leitung anzeigen"
         },
         "programConfig": {
           "dayOverview": "Tagesübersicht"

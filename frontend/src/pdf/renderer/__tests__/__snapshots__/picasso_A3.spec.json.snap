@@ -9209,6 +9209,7 @@
               "parent": [Circular],
               "props": {
                 "class": "picasso-footer-column",
+                "key": 0,
               },
               "style": {
                 "alignItems": "flex-start",

@@ -263,7 +263,8 @@
           "activity": "Activitad"
         },
         "picassoConfig": {
-          "orientation": "Layout da la pagina"
+          "orientation": "Layout da la pagina",
+          "showLeaders": "Mussar la direcziun"
         },
         "programConfig": {
           "dayOverview": "Survista dal di"

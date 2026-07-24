@@ -56,8 +56,13 @@
           <span v-if="address">{{ address }}</span>
           <span v-if="dates">{{ dates }}</span>
         </div>
-        <div class="footer-column">
-          <i18n-t tag="span" keypath="print.picasso.picassoFooter.leaders" scope="global">
+        <div v-if="showLeaders" class="footer-column">
+          <i18n-t
+            v-if="leaderNameList"
+            tag="span"
+            keypath="print.picasso.picassoFooter.leaders"
+            scope="global"
+          >
             <template #leaders>
               {{ leaderNameList }}
             </template>
@@ -104,6 +109,7 @@ export default {
     days: { type: Array, required: true },
     times: { type: Array, required: true },
     pageSize: { type: String, default: 'a4' },
+    showLeaders: { type: Boolean, default: true },
   },
   computed: {
     camp() {

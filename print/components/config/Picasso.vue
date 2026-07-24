@@ -10,6 +10,7 @@
       :orientation="options.orientation"
       :landscape="landscape"
       :filter="options.filter"
+      :show-leaders="options.showLeaders !== false"
       :index="index"
       :page-size="pageSize"
     />

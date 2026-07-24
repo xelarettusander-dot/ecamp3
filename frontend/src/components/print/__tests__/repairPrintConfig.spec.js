@@ -111,6 +111,7 @@ describe('repairConfig', () => {
       options: {
         periods: ['/periods/1a2b3c4d'],
         orientation: 'L',
+        showLeaders: true,
         filter: defaultFilter,
       },
     },
@@ -144,6 +145,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -164,6 +166,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -185,6 +188,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -205,6 +209,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -226,6 +231,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -246,6 +252,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -274,6 +281,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -294,6 +302,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -322,6 +331,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -342,6 +352,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -363,6 +374,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -383,6 +395,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -404,6 +417,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -424,6 +438,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -444,6 +459,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -464,6 +480,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -487,6 +504,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -507,6 +525,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -531,6 +550,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -554,6 +574,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -578,6 +599,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -601,6 +623,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -624,6 +647,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -644,6 +668,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -668,6 +693,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -691,6 +717,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -715,6 +742,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -735,6 +763,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -756,6 +785,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -788,6 +818,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -820,6 +851,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -978,6 +1010,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -998,6 +1031,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1019,6 +1053,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1039,6 +1074,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'P',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1060,6 +1096,93 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'P',
+              showLeaders: true,
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('adds missing showLeaders flag', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Picasso',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              orientation: 'L',
+              showLeaders: true,
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Picasso',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              orientation: 'L',
+              showLeaders: true,
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('allows showLeaders false', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Picasso',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              orientation: 'L',
+              showLeaders: false,
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Picasso',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              orientation: 'L',
+              showLeaders: false,
               filter: defaultFilter,
             },
           },
@@ -1094,7 +1217,12 @@ describe('repairConfig', () => {
         contents: [
           {
             type: 'Picasso',
-            options: { periods: [], orientation: 'L', filter: defaultFilter },
+            options: {
+              periods: [],
+              orientation: 'L',
+              showLeaders: true,
+              filter: defaultFilter,
+            },
           },
         ],
         documentName: 'test camp',
@@ -1130,6 +1258,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1171,6 +1300,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1191,6 +1321,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/11112222', '/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1212,6 +1343,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },

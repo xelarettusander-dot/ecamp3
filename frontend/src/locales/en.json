@@ -407,7 +407,8 @@
           "orientation": "Page layout",
           "landscape": "Landscape",
           "periods": "Period(s)",
-          "portrait": "Portrait"
+          "portrait": "Portrait",
+          "showLeaders": "Show leaders"
         },
         "programConfig": {
           "dayOverview": "print day overview"

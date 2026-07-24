@@ -38,7 +38,11 @@
       <TimeColumn :times="times.slice(0, times.length - 1)" align="left" />
     </View>
     <Categories :period="period" :schedule-entries="scheduleEntries" />
-    <PicassoFooter :period="period" :locale="config.locale" />
+    <PicassoFooter
+      :period="period"
+      :locale="config.locale"
+      :show-leaders="content.options.showLeaders !== false"
+    />
   </Page>
 </template>
 <script>
