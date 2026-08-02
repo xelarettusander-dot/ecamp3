@@ -11,3 +11,12 @@
 
 !/**/.gitkeep
 node_modules/
+
+# Jungschar Planungsplattform (local/runtime)
+jungschar-platform/node_modules/
+jungschar-platform/.next/
+jungschar-platform/.env
+jungschar-platform/.env.local
+jungschar-platform/vendors/ecamp3/
+jungschar-platform/vendors/notfallblatt/
+jungschar-platform/tsconfig.tsbuildinfo

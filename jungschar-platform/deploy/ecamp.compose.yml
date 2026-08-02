@@ -1,0 +1,10 @@
+# Hinweis: eCamp wird aus vendors/ecamp3 gestartet.
+# Nutze das Script (stabiler als include über Compose-Versionen):
+#
+#   npm run sync:vendors
+#   npm run start:ecamp
+#
+# Frontend: http://127.0.0.1:3020
+# Nginx-Pfad (optional): /apps/ecamp/ → siehe deploy/nginx/...
+
+services: {}

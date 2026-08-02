@@ -1,0 +1,5 @@
+# Port-Override für das Vendor-eCamp, ohne bestehende Stacks zu ändern.
+services:
+  frontend:
+    ports:
+      - "127.0.0.1:3020:3000"

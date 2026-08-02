@@ -1,0 +1,43 @@
+# Jungschar Planungsplattform — nur für dev.jungschar-gelterkinden.ch
+#
+# WICHTIG: Dieses Compose-File startet KEINE bestehenden Dienste neu und
+# verändert KEINE Container für:
+#   - supabase.jungschar-gelterkinden.ch
+#   - notfallblatt.jungschar-gelterkinden.ch
+#   - dateien.jungschar-gelterkinden.ch
+#
+# Auf dem NAS: eigenes Projektverzeichnis verwenden, z.B.
+#   /volume1/docker/jungschar-platform
+
+services:
+  web:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL}
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_ANON_KEY:-}
+        NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY:-}
+    container_name: jungschar-platform-web
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      HOSTNAME: 0.0.0.0
+    ports:
+      # Nur localhost binden — Nginx auf dem NAS terminiert TLS für
+      # dev.jungschar-gelterkinden.ch und proxyt hierher.
+      - "127.0.0.1:3010:3000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
