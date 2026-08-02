@@ -8,7 +8,7 @@ import {
 import { hasSupabaseConfig } from '@/lib/env'
 import { getSupabasePublicKey, getSupabaseUrl } from '@/lib/env'
 
-const PUBLIC_PREFIXES = ['/login', '/auth', '/api/health']
+const PUBLIC_PREFIXES = ['/login', '/auth', '/api/health', '/go']
 
 function isPublicPath(pathname: string): boolean {
   if (pathname === '/') return true

@@ -39,7 +39,7 @@ export const MODULES: PlatformModule[] = [
     description:
       'Live-App für Notfallinformationen, Events und Anmeldungen. Eingebunden von der bestehenden Installation; Code-Updates folgen dem GitHub-Repo.',
     status: 'live',
-    launchMode: 'iframe',
+    launchMode: 'external',
     appUrl: envUrl(
       'NEXT_PUBLIC_MODULE_NOTFALLBLATT_URL',
       'https://notfallblatt.jungschar-gelterkinden.ch'
@@ -66,7 +66,8 @@ export const MODULES: PlatformModule[] = [
     description:
       'Lagerplanung (Picasso, Blöcke, Material). Code aus dem eCamp3-Fork unter vendors/ecamp3; auf dem NAS per Docker gestartet und hier eingebunden.',
     status: 'linked',
-    launchMode: 'iframe',
+    launchMode: 'external',
+    // Local docker maps vendor/frontend to 3020; NAS can override via env.
     appUrl: envUrl('NEXT_PUBLIC_MODULE_ECAMP_URL', 'http://127.0.0.1:3020'),
     githubUrl: 'https://github.com/xelarettusander-dot/ecamp3',
     vendorDir: 'vendors/ecamp3',

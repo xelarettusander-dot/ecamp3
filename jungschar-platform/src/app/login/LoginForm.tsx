@@ -1,73 +1,14 @@
 'use client'
 
-import { FormEvent, Suspense, useState } from 'react'
+import { Suspense } from 'react'
 import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { TEST_ACCOUNT } from '@/lib/auth/demo'
-import { createClient } from '@/lib/supabase/client'
 
 function LoginFormInner() {
-  const router = useRouter()
   const searchParams = useSearchParams()
   const next = searchParams.get('next') || '/dashboard'
-
-  const [email, setEmail] = useState<string>(TEST_ACCOUNT.email)
-  const [password, setPassword] = useState<string>(TEST_ACCOUNT.password)
-  const [error, setError] = useState<string | null>(null)
-  const [loading, setLoading] = useState(false)
-
-  async function tryDemoLogin(): Promise<boolean> {
-    const response = await fetch('/auth/demo-login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password, next }),
-    })
-    if (!response.ok) return false
-    const data = (await response.json()) as { next?: string }
-    router.replace(data.next || next)
-    router.refresh()
-    return true
-  }
-
-  async function onSubmit(event: FormEvent) {
-    event.preventDefault()
-    setLoading(true)
-    setError(null)
-
-    try {
-      // 1) Real Supabase (same server as Notfallblatt)
-      try {
-        const supabase = createClient()
-        const { error: signInError } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        })
-        if (!signInError) {
-          router.replace(next)
-          router.refresh()
-          return
-        }
-      } catch {
-        // fall through to demo login
-      }
-
-      // 2) Local demo/test fallback
-      if (await tryDemoLogin()) return
-
-      setError('Login fehlgeschlagen. Test-Account: test@example.com / test12')
-      setLoading(false)
-    } catch (err) {
-      const demoOk = await tryDemoLogin().catch(() => false)
-      if (demoOk) return
-
-      setError(
-        err instanceof Error
-          ? err.message
-          : 'Login fehlgeschlagen. Prüfe die Supabase-Umgebungsvariablen.'
-      )
-      setLoading(false)
-    }
-  }
+  const error = searchParams.get('error')
 
   return (
     <div className="rounded-[1.75rem] border border-[var(--border)] bg-[var(--card)] p-8 shadow-sm">
@@ -76,7 +17,7 @@ function LoginFormInner() {
       </p>
       <h1 className="mt-2 text-3xl font-semibold tracking-tight">Anmelden</h1>
       <p className="mt-2 text-sm text-[var(--muted)]">
-        Bestehender Supabase-Server oder lokaler Test-Account.
+        Login über den bestehenden Supabase-Server (wie Notfallblatt).
       </p>
 
       <div className="mt-5 rounded-2xl bg-[var(--accent-soft)] px-4 py-3 text-sm text-[var(--accent-ink)]">
@@ -89,15 +30,16 @@ function LoginFormInner() {
         </p>
       </div>
 
-      <form onSubmit={onSubmit} className="mt-8 space-y-4">
+      <form action="/auth/login" method="post" className="mt-8 space-y-4">
+        <input type="hidden" name="next" value={next} />
         <label className="block text-sm">
           <span className="mb-1.5 block font-medium">E-Mail</span>
           <input
             type="email"
+            name="email"
             required
             autoComplete="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            defaultValue={TEST_ACCOUNT.email}
             className="w-full rounded-xl border border-[var(--border)] bg-white px-3 py-2.5 outline-none ring-[var(--accent)] focus:ring-2"
           />
         </label>
@@ -105,24 +47,25 @@ function LoginFormInner() {
           <span className="mb-1.5 block font-medium">Passwort</span>
           <input
             type="password"
+            name="password"
             required
             autoComplete="current-password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
+            defaultValue={TEST_ACCOUNT.password}
             className="w-full rounded-xl border border-[var(--border)] bg-white px-3 py-2.5 outline-none ring-[var(--accent)] focus:ring-2"
           />
         </label>
 
         {error ? (
-          <p className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>
+          <p className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-800">
+            Login fehlgeschlagen. Nutze {TEST_ACCOUNT.email} / {TEST_ACCOUNT.password}
+          </p>
         ) : null}
 
         <button
           type="submit"
-          disabled={loading}
-          className="w-full rounded-xl bg-[var(--accent)] px-4 py-3 text-sm font-semibold text-white disabled:opacity-60"
+          className="w-full rounded-xl bg-[var(--accent)] px-4 py-3 text-sm font-semibold text-white"
         >
-          {loading ? 'Anmelden…' : 'Anmelden'}
+          Anmelden
         </button>
       </form>
 

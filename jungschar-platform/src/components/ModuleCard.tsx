@@ -14,11 +14,15 @@ const statusClass: Record<PlatformModule['status'], string> = {
 }
 
 export function ModuleCard({ module }: { module: PlatformModule }) {
-  const ready = module.launchMode !== 'planned' && Boolean(module.appUrl)
+  const ready = Boolean(module.appUrl) && module.launchMode !== 'planned'
+  // Open working apps via hard navigation (/go/...), not a broken iframe shell.
+  const href = ready ? `/go/${module.slug}` : `/modules/${module.slug}`
 
   return (
     <Link
-      href={`/modules/${module.slug}`}
+      href={href}
+      aria-label={`${module.title} starten`}
+      data-module={module.slug}
       className="group flex h-full flex-col rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--accent)] hover:shadow-md"
     >
       <div className="mb-3 flex items-start justify-between gap-3">
@@ -39,7 +43,7 @@ export function ModuleCard({ module }: { module: PlatformModule }) {
       </p>
       <div className="mt-4 flex items-center justify-between gap-2 text-xs font-semibold">
         <span className={ready ? 'text-[var(--accent-ink)]' : 'text-[var(--muted)]'}>
-          {ready ? 'Jetzt öffnen →' : 'In Planung'}
+          {ready ? 'App starten →' : 'In Planung'}
         </span>
         {module.existingHostname ? (
           <span className="truncate text-[var(--muted)]">{module.existingHostname}</span>
