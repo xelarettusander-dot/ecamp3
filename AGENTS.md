@@ -144,8 +144,8 @@ The default dev stack is self-contained via Docker Compose (local Postgres, ngin
 
 eCamp3 uses Supabase **only as PostgreSQL** — not Supabase Auth, Realtime, or Storage. Login remains eCamp JWT + OAuth providers.
 
-1. In Supabase Studio, create a database (e.g. `ecamp3`) and copy the Postgres connection string.
-2. Copy `.env.supabase.example` → `.env` and set `SUPABASE_DATABASE_URL`.
+1. In Supabase Studio, create a database (e.g. `ecamp3`) or use the default `postgres` database.
+2. Set Cursor Secret **`POSTGRES_PASSWORD`** (or **`SUPABASE_DATABASE_URL`**) on your Cloud environment.
 3. Start **without** the local `database` container:
 
 ```bash
@@ -163,7 +163,7 @@ DB_CPU_LIMIT=4 docker compose \
   up -d --wait
 ```
 
-The `SUPABASE_DATABASE_URL` secret (or a root `.env` file) is read automatically by Compose. On Cloud Agent VMs, the update script writes `.env` from the secret on pod startup.
+The `POSTGRES_PASSWORD` or `SUPABASE_DATABASE_URL` secret (or a root `.env` file) is read by `./scripts/start-with-supabase.sh`. Restart the Cloud Agent after adding secrets.
 
 4. Run migrations and ensure JWT keys exist (see below).
 
