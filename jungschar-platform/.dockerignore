@@ -1,0 +1,10 @@
+node_modules
+.next
+.git
+.env
+.env.local
+vendors/ecamp3
+vendors/notfallblatt
+*.md
+!README.md
+playwright*

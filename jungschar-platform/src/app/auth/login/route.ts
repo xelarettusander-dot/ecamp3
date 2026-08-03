@@ -1,5 +1,5 @@
 import { createServerClient } from '@supabase/ssr'
-import { NextResponse } from 'next/server'
+import { NextResponse, type NextRequest } from 'next/server'
 import {
   DEMO_COOKIE,
   demoSessionValue,
@@ -14,8 +14,23 @@ function safeNext(value: FormDataEntryValue | null): string {
   return value
 }
 
-function redirectTo(path: string, request: Request) {
-  return NextResponse.redirect(new URL(path, request.url), { status: 303 })
+/** Prefer public Host from Nginx; avoid container bind address (0.0.0.0). */
+function publicOrigin(request: NextRequest): string {
+  const forwardedHost = request.headers.get('x-forwarded-host')
+  const host = forwardedHost || request.headers.get('host')
+  const proto =
+    request.headers.get('x-forwarded-proto') ||
+    (request.nextUrl.protocol.replace(':', '') || 'http')
+
+  if (host && !host.startsWith('0.0.0.0')) {
+    return `${proto}://${host}`
+  }
+
+  return request.nextUrl.origin.replace('://0.0.0.0', '://127.0.0.1')
+}
+
+function redirectTo(path: string, request: NextRequest) {
+  return NextResponse.redirect(new URL(path, publicOrigin(request)), { status: 303 })
 }
 
 function attachDemoCookie(response: NextResponse) {
@@ -29,16 +44,14 @@ function attachDemoCookie(response: NextResponse) {
   return response
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const form = await request.formData()
   const email = String(form.get('email') || '')
   const password = String(form.get('password') || '')
   const nextPath = safeNext(form.get('next'))
   const usingTestAccount = isTestAccount(email, password)
 
-  // Fast path: local/demo test account (also used as fallback cookie)
   if (isDemoAuthEnabled() && usingTestAccount) {
-    // Still try Supabase so the same user works against the shared Auth project.
     if (hasSupabaseConfig()) {
       try {
         let response = redirectTo(nextPath, request)
@@ -94,7 +107,7 @@ export async function POST(request: Request) {
     }
   }
 
-  const fail = new URL('/login', request.url)
+  const fail = new URL('/login', publicOrigin(request))
   fail.searchParams.set('error', 'login_failed')
   fail.searchParams.set('next', nextPath)
   return NextResponse.redirect(fail, { status: 303 })

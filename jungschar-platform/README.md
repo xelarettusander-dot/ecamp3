@@ -1,62 +1,66 @@
 # Jungschar Gelterkinden · Planungsplattform
 
-Grundgerüst für eine App, mit der Jungschar-Organisationen Lager und Events planen.
+App zum Planen von Lagern und Events.
 
-- **URL (Ziel):** https://dev.jungschar-gelterkinden.ch
-- **Login:** bestehender Supabase-Server (`https://supabase.jungschar-gelterkinden.ch`)
-- **Runtime:** Docker auf Ugreen NAS hinter Nginx
+- **URL:** https://dev.jungschar-gelterkinden.ch
+- **Auth:** bestehender **Supabase**-Server
+- **Runtime:** **Docker** + **Nginx**-Proxy
+
+## Architektur
+
+```
+Browser → Nginx (Docker) → Next.js App → Supabase (bestehend)
+```
 
 ## Geschützte bestehende Dienste
 
-Diese Apps/Hosts dürfen **nicht** verändert oder ersetzt werden:
+Nicht verändern / nicht ersetzen:
 
 1. `supabase.jungschar-gelterkinden.ch`
 2. `notfallblatt.jungschar-gelterkinden.ch`
 3. `dateien.jungschar-gelterkinden.ch`
+4. `app.jungschar-gelterkinden.ch`
 
-Wenn sie ausfallen, haben sie Vorrang vor neuen Features.
+## Start mit Docker + Nginx
 
-## Module
+```bash
+cp .env.example .env
+# Supabase Anon-Key eintragen (gleicher Server wie Notfallblatt)
 
-Siehe Dashboard oder [`docs/ROADMAP.md`](docs/ROADMAP.md).
+chmod +x scripts/docker-up.sh
+./scripts/docker-up.sh
+# oder:
+docker compose up -d --build
+```
 
-**Bereits eingebunden und nutzbar:**
+Öffnen: **http://localhost:8080**
 
-| Prio | Modul | Einbindung |
-|---|---|---|
-| 0 | Notfallblatt | Live-App im Modul-iframe (`notfallblatt.jungschar-gelterkinden.ch`) |
-| 2 | eCamp | Code aus GitHub in `vendors/ecamp3`, Start mit `npm run start:ecamp`, UI unter Modul eCamp |
-| 5 | Nextcloud | Extern-Link auf `dateien.jungschar-gelterkinden.ch` |
+Details: [`docs/DEPLOY_NAS.md`](docs/DEPLOY_NAS.md)
 
-Updates von GitHub: `npm run sync:vendors`
-
-### Test-Account
+## Test-Account
 
 - E-Mail: `test@example.com`
 - Passwort: `test12`
 
-## Lokal starten
+## Module
+
+| Prio | Modul | Einbindung |
+|---|---|---|
+| 0 | Notfallblatt | Live-App |
+| 2 | eCamp | Vendor + optional `/apps/ecamp` |
+| 5 | Nextcloud | Live-Link |
+
+## Lokal (ohne Docker)
 
 ```bash
 cp .env.example .env
-# Keys aus dem bestehenden Supabase-Projekt eintragen
 npm install
 npm run dev
 ```
-
-## NAS / Docker
-
-Siehe [`docs/DEPLOY_NAS.md`](docs/DEPLOY_NAS.md).
-
-```bash
-docker compose up -d --build
-```
-
-App lauscht intern auf `127.0.0.1:3010`. Nginx-VHost nur für `dev.jungschar-gelterkinden.ch` hinzufügen.
 
 ## Tech
 
 - Next.js (App Router)
 - Supabase Auth (`@supabase/ssr`)
+- Docker Compose (`web` + `nginx`)
 - Tailwind CSS
-- Docker standalone output
