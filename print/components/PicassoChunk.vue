@@ -25,6 +25,7 @@
           :days="days"
           :times="times"
           :schedule-entries="scheduleEntries"
+          :show-responsibles="showLeaders"
         />
       </div>
       <div class="tw-flex-initial categories fullwidth text-sm-relative">
@@ -104,6 +105,7 @@ export default {
     days: { type: Array, required: true },
     times: { type: Array, required: true },
     pageSize: { type: String, default: 'a4' },
+    showLeaders: { type: Boolean, default: true },
   },
   computed: {
     camp() {

@@ -7,20 +7,18 @@
     </div>
     <generic-error-message v-if="error" :error="error" />
     <program-day
-      v-for="{
-        day,
-        scheduleEntries,
-        summaryScheduleEntries: daySummaryScheduleEntries,
-      } in days"
+      v-for="(dayData, dayIndex) in days"
       v-else
-      :key="'day' + day.id"
-      :day="day"
+      :key="'day' + dayData.day.id"
+      :day="dayData.day"
       :filter="filter"
       :show-daily-summary="showDailySummary"
+      :page-break-options="pageBreakOptions"
+      :previous-schedule-entry="previousScheduleEntryForDay(dayIndex)"
       :show-activities="showActivities"
       :index="index"
-      :schedule-entries="scheduleEntries"
-      :summary-schedule-entries="daySummaryScheduleEntries"
+      :schedule-entries="dayData.scheduleEntries"
+      :summary-schedule-entries="dayData.summaryScheduleEntries"
     />
   </div>
 </template>
@@ -43,7 +41,25 @@ const props = defineProps({
   showActivities: { type: Boolean, required: true },
   index: { type: Number, required: true },
   pageSize: { type: String, default: 'a4' },
+  pageBreakOptions: {
+    type: Object,
+    default: () => ({
+      pageBreakAfterDayOverview: false,
+      pageBreakBetweenScheduleEntries: false,
+      pageBreakBeforeCategories: [],
+      pageBreakAfterCategories: [],
+    }),
+  },
 })
+
+function previousScheduleEntryForDay(dayIndex) {
+  if (!days.value || dayIndex <= 0) return null
+  for (let i = dayIndex - 1; i >= 0; i--) {
+    const entries = days.value[i].scheduleEntries
+    if (entries?.length) return entries[entries.length - 1]
+  }
+  return null
+}
 
 const { data: days, error } = await useAsyncData(
   `ProgramPeriod-${props.period._meta.self}`,

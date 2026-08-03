@@ -34,6 +34,7 @@
         :schedule-entries="scheduleEntries"
         :class="{ 'picasso-day-column-left-border': day.id === days[0].id }"
         :config="config"
+        :show-responsibles="showResponsibles"
       />
       <TimeColumn :times="times.slice(0, times.length - 1)" align="left" />
     </View>
@@ -99,6 +100,9 @@ export default {
       return this.period.scheduleEntries().items.filter((scheduleEntry) => {
         return filterMatchScheduleEntry(scheduleEntry, this.content.options.filter)
       })
+    },
+    showResponsibles() {
+      return this.content.options.showLeaders !== false
     },
   },
 }

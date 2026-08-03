@@ -326,10 +326,15 @@
           "activity": "Attività"
         },
         "picassoConfig": {
-          "orientation": "Layout della pagina"
+          "orientation": "Layout della pagina",
+          "showLeaders": "Mostra i cerchi dei responsabili"
         },
         "programConfig": {
-          "dayOverview": "Panoramica della giornata di stampa"
+          "dayOverview": "Panoramica della giornata di stampa",
+          "pageBreakBetweenScheduleEntries": "Ogni attività su una nuova pagina",
+          "pageBreakBeforeCategories": "Nuova pagina prima delle categorie",
+          "pageBreakAfterCategories": "Interruzione di pagina dopo le categorie",
+          "pageBreakAfterDayOverview": "Nuova pagina dopo la panoramica del giorno"
         }
       },
       "documents": {

@@ -18,6 +18,7 @@
         }"
         :percentage-height="positionStyles[scheduleEntry.id].percentageHeight"
         :config="config"
+        :show-responsibles="showResponsibles"
       />
     </View>
   </View>
@@ -43,6 +44,7 @@ export default {
     day: { type: Object, required: true },
     scheduleEntries: { type: Array, default: () => [] },
     config: { type: Object, required: true },
+    showResponsibles: { type: Boolean, default: true },
   },
   computed: {
     relevantScheduleEntries() {

@@ -18,6 +18,12 @@
       variant="underlined"
       @update:model-value="$emit('update:modelValue', modelValue)"
     />
+    <e-checkbox
+      v-model="options.showLeaders"
+      path="showLeaders"
+      :label="$t('components.print.config.picassoConfig.showLeaders')"
+      @update:model-value="$emit('update:modelValue', modelValue)"
+    />
     <div class="flex-grow-1"></div>
     <DialogScheduleEntryFilter
       :camp="camp"
@@ -98,6 +104,7 @@ export default {
       periods:
         camp.periods().items.length === 1 ? [camp.periods().items[0]._meta.self] : [],
       orientation: 'L',
+      showLeaders: true,
       filter: repairFilterConfig(null, camp),
     }
   },
@@ -117,6 +124,9 @@ export default {
     }
     if (!['L', 'P'].includes(config.options.orientation)) {
       config.options.orientation = 'L'
+    }
+    if (typeof config.options.showLeaders !== 'boolean') {
+      config.options.showLeaders = true
     }
     config.options.filter = repairFilterConfig(config.options.filter, camp)
     return config

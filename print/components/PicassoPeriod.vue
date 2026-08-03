@@ -12,6 +12,7 @@
       :days="pageDays"
       :times="timesList"
       :page-size="pageSize"
+      :show-leaders="showLeaders"
     />
   </div>
 </template>
@@ -22,6 +23,7 @@ const props = defineProps({
   camp: { type: Object, required: true },
   landscape: { type: Boolean, required: true },
   filter: { type: Object, default: () => ({}) },
+  showLeaders: { type: Boolean, default: true },
   index: { type: Number, required: true },
   pageSize: { type: String, default: 'a4' },
 })

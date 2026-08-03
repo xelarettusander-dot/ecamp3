@@ -111,6 +111,7 @@ describe('repairConfig', () => {
       options: {
         periods: ['/periods/1a2b3c4d'],
         orientation: 'L',
+        showLeaders: true,
         filter: defaultFilter,
       },
     },
@@ -144,6 +145,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -164,6 +166,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -185,6 +188,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -205,6 +209,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -226,6 +231,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -246,6 +252,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -274,6 +281,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -294,6 +302,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -322,6 +331,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -342,6 +352,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -363,6 +374,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -383,6 +395,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -404,6 +417,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -424,6 +438,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -444,6 +459,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -464,6 +480,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -487,6 +504,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -507,6 +525,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -531,6 +550,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -554,6 +574,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -578,6 +599,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -601,6 +623,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -624,6 +647,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -644,6 +668,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -668,6 +693,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -691,6 +717,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -715,6 +742,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -735,6 +763,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -756,6 +785,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -788,6 +818,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -820,6 +851,7 @@ describe('repairConfig', () => {
           options: {
             periods: ['/periods/1a2b3c4d'],
             orientation: 'L',
+            showLeaders: true,
             filter: defaultFilter,
           },
         },
@@ -978,6 +1010,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -998,6 +1031,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1019,6 +1053,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1039,6 +1074,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'P',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1060,6 +1096,93 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'P',
+              showLeaders: true,
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('adds missing showLeaders flag', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Picasso',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              orientation: 'L',
+              showLeaders: true,
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Picasso',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              orientation: 'L',
+              showLeaders: true,
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('allows showLeaders false', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Picasso',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              orientation: 'L',
+              showLeaders: false,
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Picasso',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              orientation: 'L',
+              showLeaders: false,
               filter: defaultFilter,
             },
           },
@@ -1094,7 +1217,12 @@ describe('repairConfig', () => {
         contents: [
           {
             type: 'Picasso',
-            options: { periods: [], orientation: 'L', filter: defaultFilter },
+            options: {
+              periods: [],
+              orientation: 'L',
+              showLeaders: true,
+              filter: defaultFilter,
+            },
           },
         ],
         documentName: 'test camp',
@@ -1130,6 +1258,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1171,6 +1300,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1191,6 +1321,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/11112222', '/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1212,6 +1343,7 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               orientation: 'L',
+              showLeaders: true,
               filter: defaultFilter,
             },
           },
@@ -1250,6 +1382,10 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
               filter: defaultFilter,
             },
           },
@@ -1290,6 +1426,10 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
               filter: defaultFilter,
             },
           },
@@ -1310,6 +1450,10 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               dayOverview: false,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
               filter: defaultFilter,
             },
           },
@@ -1331,6 +1475,347 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               dayOverview: false,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('adds missing pageBreakBetweenScheduleEntries flag', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('allows pageBreakBetweenScheduleEntries true', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: true,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: true,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('adds missing category page-break lists', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('keeps valid category page-break lists', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: ['/categories/1a2b3c4d'],
+              pageBreakAfterCategories: ['/categories/1a2b3c4d'],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: ['/categories/1a2b3c4d'],
+              pageBreakAfterCategories: ['/categories/1a2b3c4d'],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('removes unknown category page-break URIs', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: ['/categories/1a2b3c4d', '/categories/missing'],
+              pageBreakAfterCategories: ['/categories/missing'],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: ['/categories/1a2b3c4d'],
+              pageBreakAfterCategories: [],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('adds missing pageBreakAfterDayOverview flag', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      })
+    })
+
+    test('allows pageBreakAfterDayOverview true', async () => {
+      // given
+      const config = {
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: true,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
+              filter: defaultFilter,
+            },
+          },
+        ],
+        documentName: 'test camp',
+        options: defaultOptions,
+        language: 'en-GB',
+      }
+
+      // when
+      const result = repairConfig(config, ...args)
+
+      // then
+      expect(result).toEqual({
+        camp: '/camps/1a2b3c4d',
+        contents: [
+          {
+            type: 'Program',
+            options: {
+              periods: ['/periods/1a2b3c4d'],
+              dayOverview: true,
+              pageBreakAfterDayOverview: true,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
               filter: defaultFilter,
             },
           },
@@ -1351,6 +1836,10 @@ describe('repairConfig', () => {
             options: {
               periods: [],
               dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
               filter: defaultFilter,
             },
           },
@@ -1372,6 +1861,10 @@ describe('repairConfig', () => {
             options: {
               periods: [],
               dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
               filter: defaultFilter,
             },
           },
@@ -1392,6 +1885,10 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
               filter: defaultFilter,
             },
           },
@@ -1413,6 +1910,10 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
               filter: defaultFilter,
             },
           },
@@ -1433,6 +1934,10 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/11112222', '/periods/1a2b3c4d'],
               dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
               filter: defaultFilter,
             },
           },
@@ -1454,6 +1959,10 @@ describe('repairConfig', () => {
             options: {
               periods: ['/periods/1a2b3c4d'],
               dayOverview: true,
+              pageBreakAfterDayOverview: false,
+              pageBreakBetweenScheduleEntries: false,
+              pageBreakBeforeCategories: [],
+              pageBreakAfterCategories: [],
               filter: defaultFilter,
             },
           },
@@ -1475,6 +1984,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: '/periods/1a2b3c4d',
                   day: ['/days/1a2b3c4d'],
@@ -1503,6 +2016,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: '/periods/1a2b3c4d',
                   day: ['/days/1a2b3c4d'],
@@ -1530,6 +2047,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
               },
             },
           ],
@@ -1550,6 +2071,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },
@@ -1570,6 +2095,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   day: [],
                   category: [],
@@ -1597,6 +2126,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },
@@ -1617,6 +2150,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: '/periods/00000000',
                   day: [],
@@ -1645,6 +2182,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },
@@ -1665,6 +2206,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: null,
                   day: [],
@@ -1692,6 +2237,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },
@@ -1712,6 +2261,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: null,
                   day: [],
@@ -1740,6 +2293,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },
@@ -1760,6 +2317,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: null,
                   day: [],
@@ -1787,6 +2348,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },
@@ -1807,6 +2372,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: null,
                   day: [],
@@ -1835,6 +2404,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },
@@ -1855,6 +2428,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: null,
                   category: [],
@@ -1882,6 +2459,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },
@@ -1902,6 +2483,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: null,
                   day: ['/days/00000000'],
@@ -1930,6 +2515,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },
@@ -1950,6 +2539,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: null,
                   day: [],
@@ -1977,6 +2570,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },
@@ -1997,6 +2594,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: null,
                   day: [],
@@ -2024,6 +2625,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },
@@ -2044,6 +2649,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: {
                   period: null,
                   day: [],
@@ -2071,6 +2680,10 @@ describe('repairConfig', () => {
               options: {
                 periods: ['/periods/1a2b3c4d'],
                 dayOverview: false,
+                pageBreakAfterDayOverview: false,
+                pageBreakBetweenScheduleEntries: false,
+                pageBreakBeforeCategories: [],
+                pageBreakAfterCategories: [],
                 filter: defaultFilter,
               },
             },

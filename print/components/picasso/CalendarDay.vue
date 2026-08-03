@@ -19,7 +19,10 @@
           ...colorStyles[scheduleEntry.id],
         }"
       >
-        <PicassoScheduleEntry :schedule-entry="scheduleEntry" />
+        <PicassoScheduleEntry
+          :schedule-entry="scheduleEntry"
+          :show-responsibles="showResponsibles"
+        />
         <span class="tw-float-right tw-italic ml-1" style="color: #000" />
       </div>
     </div>
@@ -44,6 +47,7 @@ export default {
     displayedTimes: { type: Array, required: true },
     day: { type: Object, required: true },
     scheduleEntries: { type: Array, default: () => [] },
+    showResponsibles: { type: Boolean, default: true },
   },
   computed: {
     relevantScheduleEntries() {

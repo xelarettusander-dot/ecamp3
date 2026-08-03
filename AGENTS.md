@@ -135,3 +135,80 @@ Find the skill here: [skills](.agents/skills).
 - Ensure tests are green
 - Ensure code is formatted
 - Ensure code is linted
+
+## Cursor Cloud specific instructions
+
+The default dev stack is self-contained via Docker Compose (local Postgres, nginx reverse-proxy, mock OAuth, maildev). You can optionally point the API at **external Postgres**, e.g. self-hosted Supabase on your NAS.
+
+### Using Supabase Postgres (`supabase.jungschar-gelterkinden.ch`)
+
+eCamp3 uses Supabase **only as PostgreSQL** — not Supabase Auth, Realtime, or Storage. Login remains eCamp JWT + OAuth providers.
+
+1. In Supabase Studio, create a database (e.g. `ecamp3`) or use the default `postgres` database.
+2. Set Cursor Secret **`POSTGRES_PASSWORD`** (or **`SUPABASE_DATABASE_URL`**) on your Cloud environment.
+3. Start **without** the local `database` container:
+
+```bash
+./scripts/start-with-supabase.sh
+```
+
+Or manually:
+
+```bash
+DB_CPU_LIMIT=4 docker compose \
+  -f docker-compose.yml \
+  -f docker-compose.override.yml \
+  -f docker-compose.supabase.yml \
+  -f .cursor/docker-compose.cloud.override.yml \
+  up -d --wait
+```
+
+The `POSTGRES_PASSWORD` or `SUPABASE_DATABASE_URL` secret (or a root `.env` file) is read by `./scripts/start-with-supabase.sh`. Restart the Cloud Agent after adding secrets.
+
+4. Run migrations and ensure JWT keys exist (see below).
+
+Use port **5432** (direct) for migrations. Pooler port **6543** is optional for runtime. Add `&sslmode=require` to the URL if your instance enforces TLS.
+
+To use local Postgres again, add `--profile local-db` and omit `docker-compose.supabase.yml`.
+
+### Docker in Cloud VMs
+
+Cloud agent VMs run Docker-in-Docker. Before `docker compose up`, configure the daemon once per VM (not in the update script):
+
+```bash
+sudo mkdir -p /etc/docker
+printf '%s\n' '{' '  "storage-driver": "fuse-overlayfs",' '  "default-cgroupns-mode": "host",' '  "exec-opts": ["native.cgroupdriver=cgroupfs"]' '}' | sudo tee /etc/docker/daemon.json
+sudo apt-get install -y fuse-overlayfs iptables
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+# start dockerd (e.g. in tmux): sudo dockerd
+sudo chmod 666 /var/run/docker.sock
+```
+
+### Starting the stack
+
+Use **both** compose files plus the cloud override (removes Postgres CPU limits that fail on 4-core VMs and nested cgroups):
+
+```bash
+DB_CPU_LIMIT=4 docker compose -f docker-compose.yml -f docker-compose.override.yml -f .cursor/docker-compose.cloud.override.yml up -d --wait
+```
+
+App URL: **http://localhost:3000**
+
+First-time API setup (if login returns 500):
+
+1. Ensure JWT keys exist: `api/config/jwt/private.pem` and `public.pem` (generated automatically by the API entrypoint when missing; if login fails with JWT errors, regenerate per `api/docker/php/docker-entrypoint.sh`).
+2. Run migrations if needed: `docker compose exec api php bin/console doctrine:migrations:migrate --no-interaction`
+
+### Verify / hello-world
+
+Default dev login: `test@example.com` / `test`
+
+```bash
+bash wait-for-container-startup.sh
+docker compose exec frontend npm run lint
+docker compose --profile e2e run --rm e2e npm ci
+docker compose --profile e2e run --rm e2e npx playwright test tests/5-cross-browser-tests/login.spec.ts --grep "can login" --project=chromium
+```
+
+The behavior test `tests/9-behavior-tests/category/create-category.ts` (project `behavior-tests`) logs in, creates a camp via UI, and adds a category — a good end-to-end smoke test.

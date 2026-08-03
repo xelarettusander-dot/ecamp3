@@ -11,6 +11,7 @@
     </Link>
     <View class="picasso-schedule-entry-spacer" />
     <View
+      v-if="showResponsibles"
       class="picasso-schedule-entry-responsibles-container"
       :style="{ fontSize: fontSize, color: textColor }"
     >
@@ -37,6 +38,7 @@ export default {
     scheduleEntry: { type: Object, required: true },
     percentageHeight: { type: Number, default: 10 },
     config: { type: Object, required: true },
+    showResponsibles: { type: Boolean, default: true },
   },
   computed: {
     color() {
